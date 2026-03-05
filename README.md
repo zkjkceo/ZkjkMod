@@ -8,9 +8,14 @@ Current features include:
 * Recipes for Stone Brick variants
 * Wool bleaching (craft white wool from any other wool color)
 
-Other:
-* Sun rises in the north like in the old versions
-
 Unobtainable stuff (for now):
 * Fixed music disc 11
 * Beetroot
+
+Other/Optional:
+* Old fire spreading
+* Old sunrise and sunset (in the north and south)
+  - the decision for that was that it matches how north/south faces of blocks are lighter than east/west faces
+
+Planned features:
+* More noteblock sounds
