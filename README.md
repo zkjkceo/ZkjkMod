@@ -11,6 +11,7 @@ Current features include:
 Unobtainable stuff (for now):
 * Fixed music disc 11
 * Beetroot
+  - not obtainable for now because I don't know how it matches the style of 1.5.2. I don't want to destroy the soul of this version by adding too much stuff
 
 Other/Optional:
 * Old fire spreading
@@ -18,4 +19,4 @@ Other/Optional:
   - the decision for that was that it matches how north/south faces of blocks are lighter than east/west faces
 
 Planned features:
-* More noteblock sounds
+* More noteblock sounds 
