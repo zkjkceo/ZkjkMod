@@ -8,6 +8,9 @@ Current features include:
 * Recipes for Stone Brick variants
 * Wool bleaching (craft white wool from any other wool color)
 
+Other:
+* Sun rises in the north like in the old versions
+
 Unobtainable stuff (for now):
 * Fixed music disc 11
 * Beetroot
