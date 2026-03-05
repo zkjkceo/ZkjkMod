@@ -15,8 +15,6 @@ Unobtainable stuff (for now):
 
 Other/Optional:
 * Old fire spreading
-* Old sunrise and sunset (in the north and south)
-  - the decision for that was that it matches how north/south faces of blocks are lighter than east/west faces
 
 Planned features:
 * More noteblock sounds 
