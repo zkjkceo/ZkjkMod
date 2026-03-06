@@ -372,8 +372,7 @@ public class ChunkProviderGenerate implements IChunkProvider {
 			var13 = var4 + this.rand.nextInt(16) + 8;
 			var14 = this.rand.nextInt(128);
 			int var15 = var5 + this.rand.nextInt(16) + 8;
-			WorldGenDungeonsBig bigDungeon = new WorldGenDungeonsBig();
-			if((bigDungeon.generate(this.worldObj, this.rand, var13, var14, var15))) {
+			if((new WorldGenDungeonsBig()).generate(this.worldObj, this.rand, var13, var14, var15)) {
 			}
 		}
 
@@ -442,3 +441,4 @@ public class ChunkProviderGenerate implements IChunkProvider {
 	
 	
 }
+
