@@ -126,27 +126,9 @@ public class WorldGenDungeonsBig extends WorldGenerator {
 					}
 				}
 			}
-			
-			for (int x = var3 - var7 - 1; x <= var3 + var7 + 1; x++) {
-				for (int y = var4; y <= var4 + var6; y++) {
-					for (int z = var5 - var8 - 1; z <= var5 + var8 + 1; z++) {
-						if (var1.isAirBlock(x, y, z)) {
-							boolean solidNeighbor = false;
-							int[][] offsets = {{1,0,0},{-1,0,0},{0,1,0},{0,-1,0},{0,0,1},{0,0,-1}};
-							for (int[] o : offsets) {
-								Material neighbor = var1.getBlockMaterial(x+o[0], y+o[1], z+o[2]);
-								if (neighbor.isSolid()) {
-									solidNeighbor = true;
-									break;
-								}
-							}
-							if (solidNeighbor && var2.nextInt(12) == 0) { 
-								var1.setBlock(x, y, z, Block.web.blockID);
-							}
-						}
-					}
-				}
-			}
+
+			//Cobweb code removed
+
             return true;
         } else {
             return false;
@@ -168,3 +150,4 @@ public class WorldGenDungeonsBig extends WorldGenerator {
 		return var2 == 0 ? "Skeleton" : (var2 == 1 ? "Zombie" : (var2 == 2 ? "Zombie" : (var2 == 3 ? "Spider" : "")));
 	}
 }
+
