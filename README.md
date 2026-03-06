@@ -7,9 +7,10 @@ Current features include:
 * Bone Block
 * Recipes for Stone Brick variants
 * Wool bleaching (craft white wool from any other wool color)
+* Fixed Disc 11
+* New Big Monster Rooms. You can find Fixed Disc 11 in there only.
 
 Unobtainable stuff (for now):
-* Fixed music disc 11
 * Beetroot
   - not obtainable for now because I don't know how it matches the style of 1.5.2. I don't want to destroy the soul of this version by adding too much stuff
 
