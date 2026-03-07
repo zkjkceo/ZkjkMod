@@ -33,6 +33,7 @@ public class FurnaceRecipes {
 		this.addSmelting(Block.oreLapis.blockID, new ItemStack(Item.dyePowder, 1, 4), 0.2F);
 		this.addSmelting(Block.oreNetherQuartz.blockID, new ItemStack(Item.netherQuartz), 0.2F);
 		this.addSmelting(Block.stoneBrick.blockID, new ItemStack(Block.stoneBrick, 1, 2), 0.1F);
+		this.addSmelting(Block.sponge.blockID, new ItemStack(Block.sponge, 1, 0), 0.15F);
 	}
 
 	public void addSmelting(int var1, ItemStack var2, float var3) {

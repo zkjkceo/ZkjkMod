@@ -809,6 +809,7 @@ public class Block {
 		Item.itemsList[pistonStickyBase.blockID] = new ItemPiston(pistonStickyBase.blockID - 256);
 		Item.itemsList[cobblestoneWall.blockID] = (new ItemMultiTextureTile(cobblestoneWall.blockID - 256, cobblestoneWall, BlockWall.types)).setUnlocalizedName("cobbleWall");
 		Item.itemsList[anvil.blockID] = (new ItemAnvilBlock(anvil)).setUnlocalizedName("anvil");
+		Item.itemsList[sponge.blockID] = (new ItemSponge(sponge.blockID - 256)).setUnlocalizedName("sponge");
 
 		for(int var0 = 0; var0 < 256; ++var0) {
 			if(blocksList[var0] != null) {
