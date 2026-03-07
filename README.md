@@ -13,6 +13,7 @@ Current features include:
 Unobtainable stuff (for now):
 * Beetroot
   - not obtainable for now because I don't know how it matches the style of 1.5.2. I don't want to destroy the soul of this version by adding too much stuff
+* Sponges
 
 Other/Optional:
 * Old fire spreading
