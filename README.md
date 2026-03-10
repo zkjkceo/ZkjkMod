@@ -19,4 +19,8 @@ Other/Optional:
 * Old fire spreading
 
 Planned features:
-* More noteblock sounds 
+* More noteblock sounds
+* More stuff in F3
+* Colored glass
+  - maybe, because i'm not sure if it fits, but it would be nice
+* Player spawn point compass
