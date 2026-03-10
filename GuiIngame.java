@@ -369,6 +369,9 @@ public class GuiIngame extends Gui {
 				Chunk var50 = this.mc.theWorld.getChunkFromBlockCoords(var47, var23);
 				this.drawString(var8, "lc: " + (var50.getTopFilledSegment() + 15) + " b: " + var50.getBiomeGenForWorldCoords(var47 & 15, var23 & 15, this.mc.theWorld.getWorldChunkManager()).biomeName + " bl: " + var50.getSavedLightValue(EnumSkyBlock.Block, var47 & 15, var22, var23 & 15) + " sl: " + var50.getSavedLightValue(EnumSkyBlock.Sky, var47 & 15, var22, var23 & 15) + " rl: " + var50.getBlockLightValue(var47 & 15, var22, var23 & 15, 0), 2, 96, 14737632);
 			}
+			WorldInfo info = mc.theWorld.getWorldInfo();
+			long day = info.getWorldTime()/24000;
+			var8.drawStringWithShadow("Day (" + day + ")", 2, 122, 16777215);
 
 			this.drawString(var8, String.format("ws: %.3f, fs: %.3f, g: %b, fl: %d", new Object[]{Float.valueOf(this.mc.thePlayer.capabilities.getWalkSpeed()), Float.valueOf(this.mc.thePlayer.capabilities.getFlySpeed()), Boolean.valueOf(this.mc.thePlayer.onGround), Integer.valueOf(this.mc.theWorld.getHeightValue(var47, var23))}), 2, 104, 14737632);
 			GL11.glPopMatrix();
