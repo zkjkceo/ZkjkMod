@@ -9,6 +9,8 @@ Current features include:
 * Wool bleaching (craft white wool from any other wool color)
 * Fixed Disc 11
 * New Big Monster Rooms. You can find Fixed Disc 11 in there only.
+* Strongholds everywhere in the world (Eyes of Ender still guide you to the 3 vanilla strongholds)
+* Enchanted Books with multiple enchants (1/4 chance for every next enchant)
 
 Unobtainable stuff (for now):
 * Beetroot
