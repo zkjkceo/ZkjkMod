@@ -2,6 +2,10 @@
 Minecraft mod for version 1.5.2 that backports some newer features, improves QoL and has other small changes.
 
 Current features include:
+* Added Config:
+  - Log Rotation settings
+  - Thunder toggle (basically just kills lightning bolts and stops them from being rendered)
+  - Far Entities settings (so you can see entities from bigger distance)
 * Coal Block
 * Wheat Block
 * Bone Block
