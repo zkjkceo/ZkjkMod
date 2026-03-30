@@ -16,6 +16,7 @@ Unobtainable stuff (for now):
 * Beetroot
   - not obtainable for now because I don't know how it matches the style of 1.5.2. I don't want to destroy the soul of this version by adding too much stuff
 * Sponges
+* Potion of Cloning
 
 Other/Optional:
 * Old fire spreading
@@ -23,8 +24,8 @@ Other/Optional:
 Planned features:
 * More noteblock sounds
 * More stuff in F3
-* New potions
-  - magical beetroot -> potion of clone
+* More potions
+  - Potion of Fire
 * Colored glass
   - maybe, because i'm not sure if it fits, but it would be nice
 * Player spawn point compass
