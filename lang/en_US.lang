@@ -505,6 +505,7 @@ tile.stairsQuartz.name=Quartz Stairs
 
 item.beetrootSeeds.name=Beetroot Seeds
 item.beetroot.name=Beetroot
+item.magicalBeetroot.name=Magical Beetroot
 item.bowlBeetrootSoup.name=Beetroot Soup
 item.shovelIron.name=Iron Shovel
 item.pickaxeIron.name=Iron Pickaxe
@@ -595,6 +596,7 @@ item.doorIron.name=Iron Door
 item.redstone.name=Redstone
 item.snowball.name=Snowball
 item.boat.name=Boat
+item.boatLarge.name=Large Boat
 item.leather.name=Leather
 item.milk.name=Milk
 item.brick.name=Brick
@@ -857,6 +859,7 @@ potion.nightVision=Night Vision
 potion.hunger=Hunger
 potion.poison=Poison
 potion.wither=Wither
+potion.clone=Cloning
 
 potion.moveSpeed.postfix=Potion of Swiftness
 potion.moveSlowdown.postfix=Potion of Slowness
@@ -878,6 +881,7 @@ potion.nightVision.postfix=Potion of Night Vision
 potion.hunger.postfix=Potion of Hunger
 potion.poison.postfix=Potion of Poison
 potion.wither.postfix=Potion of Decay
+potion.clone.postfix=Potion of Cloning
 
 potion.potency.0=
 potion.potency.1=II
