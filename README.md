@@ -22,11 +22,14 @@ Current features include:
   - they now have the same chance for armor and enchanted equipment on all difficulty levels. their enchanted items use a curve now to determine their enchantment level - so now they can have op enchanted items, but it's more common they get bad enchants. to reward it there is a 1/1000 chance they will drop a random enchanted book.
   - baby zombies can now spawn naturally like in 1.6.2
 * Beetroot can now be obtained from zombies. the chance is 1/250
+* Potion of Cloning
+  - you can make it from magical beetroot (combine lapis lazuli with beetroot)
+  - it will spawn a clone for 90/180 seconds that will fight for you
+  - there are still a few issues regarding that. splash potion doesn't work. i also want to make it so that it will take the actual player's skin (there's no skin support so i skipped it for now)
 
 Unobtainable stuff (for now):
 
 * Sponges
-* Potion of Cloning
 
 Other/Optional:
 * Old fire spreading
