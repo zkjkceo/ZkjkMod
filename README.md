@@ -34,3 +34,4 @@ Planned features:
   - maybe, because i'm not sure if it fits, but it would be nice
 * Player spawn point compass
 * Boats for 2 players
+* Runes. Unique enchantment, one per item
