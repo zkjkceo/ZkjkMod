@@ -44,3 +44,4 @@ Planned features:
 * Player spawn point compass
 * Boats for 2 players
 * Runes. Unique enchantment, one per item
+* New bosses
