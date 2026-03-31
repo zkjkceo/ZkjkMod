@@ -78,6 +78,7 @@ public class RenderManager {
 		this.entityRenderMap.put(EntityMinecartTNT.class, new RenderTntMinecart());
 		this.entityRenderMap.put(EntityMinecartMobSpawner.class, new RenderMinecartMobSpawner());
 		this.entityRenderMap.put(EntityMinecart.class, new RenderMinecart());
+		this.entityRenderMap.put(EntityBoatLarge.class, new RenderBoatLarge());
 		this.entityRenderMap.put(EntityBoat.class, new RenderBoat());
 		this.entityRenderMap.put(EntityFishHook.class, new RenderFish());
 		this.entityRenderMap.put(EntityLightningBolt.class, new RenderLightningBolt());

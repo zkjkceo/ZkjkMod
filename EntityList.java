@@ -167,6 +167,7 @@ public class EntityList {
 		addMapping(EntityIronGolem.class, "VillagerGolem", 99);
 		addMapping(EntityVillager.class, "Villager", 120, 5651507, 12422002);
 		addMapping(EntityClone.class, "Clone", 121, '\uafaf', 7969893);
+		addMapping(EntityBoatLarge.class, "BoatLarge", 122);
 		addMapping(EntityEnderCrystal.class, "EnderCrystal", 200);
 	}
 }

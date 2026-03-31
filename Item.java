@@ -164,6 +164,7 @@ public class Item {
 	public static Item beetrootSeeds = (new ItemSeeds(179, Block.beetroot.blockID, Block.tilledField.blockID)).setUnlocalizedName("beetrootSeeds");
 	public static Item bowlBeetrootSoup = (new ItemSoup(180, 6)).setUnlocalizedName("bowlBeetrootSoup");
 	public static Item magicalBeetroot = (new Item(181)).setUnlocalizedName("magicalBeetroot").setPotionEffect(PotionHelper.magicalBeetrootEffect).setCreativeTab(CreativeTabs.tabBrewing);
+	public static Item boatLarge = (new ItemBoatLarge(182)).setUnlocalizedName("boatLarge");
 	public static Item record13 = (new ItemRecord(2000, "13")).setUnlocalizedName("record");
 	public static Item recordCat = (new ItemRecord(2001, "cat")).setUnlocalizedName("record");
 	public static Item recordBlocks = (new ItemRecord(2002, "blocks")).setUnlocalizedName("record");
