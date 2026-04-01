@@ -765,6 +765,7 @@ entity.SnowMan.name=Snow Golem
 entity.EnderDragon.name=Ender Dragon
 entity.WitherBoss.name=Wither
 entity.Witch.name=Witch
+entity.SkeletonLord.name=Skeleton Lord
 
 entity.Pig.name=Pig
 entity.Sheep.name=Sheep
