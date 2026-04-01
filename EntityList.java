@@ -169,5 +169,6 @@ public class EntityList {
 		addMapping(EntityClone.class, "Clone", 121, '\uafaf', 7969893);
 		addMapping(EntityBoatLarge.class, "BoatLarge", 122);
 		addMapping(EntityEnderCrystal.class, "EnderCrystal", 200);
+		addMapping(EntitySkeletonLord.class, "SkeletonLord", 123, 12698049, 4802889);
 	}
 }
