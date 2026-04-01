@@ -45,3 +45,4 @@ Planned features:
 * Boats for 2 players
 * Runes. Unique enchantment, one per item
 * New bosses
+  - Skeleton Lord. made from bone blocks and regular skeleton heads (like the wither)
