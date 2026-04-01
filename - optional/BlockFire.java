@@ -110,13 +110,18 @@ public class BlockFire extends Block {
 									}
 
 									int var14 = this.getChanceOfNeighborsEncouragingFire(var1, var10, var12, var11);
+									
+									BiomeGenBase biome = var1.getBiomeGenForCoords(var10, var11);
+									boolean isHumid = biome == BiomeGenBase.jungle || biome == BiomeGenBase.jungleHills;
+									
 									if(var14 > 0 && var5.nextInt(var13) <= var14 && (!var1.isRaining() || !var1.canLightningStrikeAt(var10, var12, var11)) && !var1.canLightningStrikeAt(var10 - 1, var12, var4) && !var1.canLightningStrikeAt(var10 + 1, var12, var11) && !var1.canLightningStrikeAt(var10, var12, var11 - 1) && !var1.canLightningStrikeAt(var10, var12, var11 + 1)) {
 										int var16 = var7 + var5.nextInt(5) / 4;
 										if(var16 > 15) {
 											var16 = 15;
 										}
-
-										var1.setBlock(var10, var12, var11, this.blockID, var16, 3);
+										if(!isHumid || var5.nextInt(5)==0) {
+											var1.setBlock(var10, var12, var11, this.blockID, var16, 3);
+										}
 									}
 								}
 							}
