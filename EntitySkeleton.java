@@ -161,9 +161,9 @@ public class EntitySkeleton extends EntityMob implements IRangedAttackMob {
 			this.entityDropItem(new ItemStack(Item.skull.itemID, 1, 1), 0.0F);
 		}
 		else if(var1>0) {
-			if(this.rand.nextInt(100) == 0) {
+			if(this.rand.nextInt(5) == 0) {
 				ItemStack item = Item.enchantedBook.func_92109_a(rand);
-				this.entityDropItem(item, 1); //enchanted book, roughly 0.005% (1 in 20000)
+				this.entityDropItem(item, 1); //enchanted book, roughly 0.1% (1 in 1000)
 			}
 		}
 	}
