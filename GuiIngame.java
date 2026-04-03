@@ -338,13 +338,13 @@ public class GuiIngame extends Gui {
 		}
 		
 		if(!this.mc.gameSettings.showDebugInfo) {
-		var8.drawStringWithShadow("Minecraft 1.5.3", 2, 2, 16777215);
+		var8.drawStringWithShadow("Minecraft 1.5.4", 2, 2, 16777215);
 		}
 
 		if(this.mc.gameSettings.showDebugInfo) {
 			this.mc.mcProfiler.startSection("debug");
 			GL11.glPushMatrix();
-			var8.drawStringWithShadow("Minecraft 1.5.3 (" + this.mc.debug + ")", 2, 2, 16777215);
+			var8.drawStringWithShadow("Minecraft 1.5.4 (" + this.mc.debug + ")", 2, 2, 16777215);
 			var8.drawStringWithShadow(this.mc.debugInfoRenders(), 2, 12, 16777215);
 			var8.drawStringWithShadow(this.mc.getEntityDebug(), 2, 22, 16777215);
 			var8.drawStringWithShadow(this.mc.debugInfoEntities(), 2, 32, 16777215);
