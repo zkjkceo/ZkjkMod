@@ -165,7 +165,7 @@ public class EntityZombie extends EntityMob {
 				ItemStack item = Item.enchantedBook.func_92109_a(rand);
 				this.entityDropItem(item, 1); //enchanted book, roughly 0.1% (1 in 1000)
 			} else {
-				this.dropItem(Item.beetroot.itemID, 1); //beetroot, roughly 0.4% (1 in 250)
+				this.dropItem(Item.beetrootSeeds.itemID, 1); //beetroot seeds, roughly 0.4% (1 in 250)
 			}
 		} else {
 			switch(this.rand.nextInt(3)) {
