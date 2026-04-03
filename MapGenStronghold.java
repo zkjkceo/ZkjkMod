@@ -76,7 +76,7 @@ public class MapGenStronghold extends MapGenStructure {
 			}
 		}
 		
-		int spacing = 24;
+		int spacing = 32;
 		int gridX = var1 / spacing;
 		int gridZ = var2 / spacing;
 		long seed = (long)gridX * 341873128712L + (long)gridZ * 132897987541L + this.worldObj.getSeed();
@@ -84,7 +84,6 @@ public class MapGenStronghold extends MapGenStructure {
 		int offsetX = rand.nextInt(spacing);
 		int offsetZ = rand.nextInt(spacing);
 		if(var1 == gridX * spacing + offsetX && var2 == gridZ * spacing + offsetZ) {
-			System.out.println("Stronghold generated at " + var1*16 + " 100 " + var2*16);
 			isRandom = true;
 			return true;
 		}
