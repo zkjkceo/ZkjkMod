@@ -41,9 +41,12 @@ Planned features:
   - Potion of Fire
 * Colored glass
   - maybe, because i'm not sure if it fits, but it would be nice
+* New flowers
 * Player spawn point compass
 * Boats for 2 players
 * Biome changes and new biomes
+  - Tropical islands (jungle hills in the ocean)
+  - Smaller ice plains
 * Runes. Unique enchantment, one per item
 * New bosses
   - Skeleton Lord. made from bone blocks and regular skeleton heads (like the wither)
