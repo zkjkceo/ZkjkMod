@@ -9,6 +9,8 @@ Current features include:
   - Log Rotation settings
   - Thunder toggle (basically just kills lightning bolts and stops them from being rendered)
   - Far Entities settings (so you can see entities from bigger distance)
+* Biomes and Worldgen:
+  - Oceans now generate a bit more trees
 * Coal Block
 * Wheat Block
 * Bone Block
@@ -45,8 +47,6 @@ Planned features:
 * Player spawn point compass
 * Boats for 2 players
 * Biome changes and new biomes
-  - Tropical islands (jungle hills in the ocean)
-  - Smaller ice plains
 * Runes. Unique enchantment, one per item
 * New bosses
   - Skeleton Lord. made from bone blocks and regular skeleton heads (like the wither)
