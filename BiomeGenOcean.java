@@ -6,8 +6,9 @@ public class BiomeGenOcean extends BiomeGenBase {
 	public BiomeGenOcean(int var1) {
 		super(var1);
 		this.spawnableCreatureList.clear();
-		this.theBiomeDecorator.treesPerChunk = 3; //more trees
+		this.theBiomeDecorator.azureBluetsPerChunk = 2;
 	}
+
 	
 	//public void decorate(World var1, Random var2, int var3, int var4) {
 	//	super.decorate(var1, var2, var3, var4);

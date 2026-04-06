@@ -183,6 +183,7 @@ public class Block {
 	public static final Block dropper = (new BlockDropper(158)).setHardness(3.5F).setStepSound(soundStoneFootstep).setUnlocalizedName("dropper");
 	public static final Block blockWheat = (new BlockWheat(170)).setHardness(0.5F).setStepSound(soundGrassFootstep).setUnlocalizedName("blockWheat");
 	public static final Block blockCoal = (new Block(173, Material.rock)).setHardness(5.0F).setResistance(6.0F).setStepSound(soundStoneFootstep).setUnlocalizedName("blockCoal").setCreativeTab(CreativeTabs.tabBlock);
+	//public static final Block doublePlant = (BlockDoublePlant)(new BlockDoublePlant(175)).setHardness(0.0F).setStepSound(soundGrassFootstep).setUnlocalizedName("doublePlant");
 	public static final Block beetroot = (new BlockBeetroot(207)).setUnlocalizedName("beetroots");
 	public static final Block blockBone = (new BlockBone(216)).setHardness(2.0F).setResistance(2.0F).setStepSound(soundStoneFootstep).setUnlocalizedName("blockBone").setCreativeTab(CreativeTabs.tabBlock);
 	public final int blockID;
@@ -810,6 +811,8 @@ public class Block {
 		Item.itemsList[cobblestoneWall.blockID] = (new ItemMultiTextureTile(cobblestoneWall.blockID - 256, cobblestoneWall, BlockWall.types)).setUnlocalizedName("cobbleWall");
 		Item.itemsList[anvil.blockID] = (new ItemAnvilBlock(anvil)).setUnlocalizedName("anvil");
 		Item.itemsList[sponge.blockID] = (new ItemSponge(sponge.blockID - 256)).setUnlocalizedName("sponge");
+		Item.itemsList[plantRed.blockID] = (new ItemMultiTextureTile(plantRed.blockID - 256, plantRed, BlockFlower.FLOWER_TYPES)).setUnlocalizedName("rose");
+		//Item.itemsList[doublePlant.blockID] = (new ItemMultiTextureTile(doublePlant.blockID - 256, doublePlant, BlockDoublePlant.DOUBLE_PLANT_TYPES)).setUnlocalizedName("doublePlant");
 
 		for(int var0 = 0; var0 < 256; ++var0) {
 			if(blocksList[var0] != null) {
