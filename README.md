@@ -23,6 +23,7 @@ Current features include:
 * Fixed Disc 11
 * New Big Monster Rooms. You can find Fixed Disc 11 in there only.
 * Strongholds everywhere in the world (Eyes of Ender still guide you to the 3 vanilla strongholds)
+* Mineshafts are rarer (still more common than my random strongholds)
 * Enchanted Books from loot with multiple enchants (1/4 chance for every next enchant)
 * Stronger Zombies and Skeletons
   - they now have the same chance for armor and enchanted equipment on all difficulty levels. their enchanted items use a curve now to determine their enchantment level - so now they can have op enchanted items, but it's more common they get bad enchants. to reward it there is a 1/1000 chance they will drop a random enchanted book.
