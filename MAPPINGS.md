@@ -1,5 +1,5 @@
-Minecraft.java - Minecraft
-MapGenMineshaft.java -
+* Minecraft.java - Minecraft
+* MapGenMineshaft.java -
 Block.java - apa
 RenderBlocks.java - bgf
 BlockBeetroot.java - BlockBeetroot
