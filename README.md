@@ -11,6 +11,8 @@ Current features include:
   - Far Entities settings (so you can see entities from bigger distance)
 * Biomes and Worldgen:
   - Flower Forests
+  - Deep Oceans (issue: rivers might not run into oceans. i had to fix rivers making outlines around deep oceans)
+  - Dark Forest (PLACEHOLDER FOR NOW, no dark oak yet)
 * New Flowers
   - Backported from 1.7
 * Coal Block
