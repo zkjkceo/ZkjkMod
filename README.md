@@ -10,7 +10,9 @@ Current features include:
   - Thunder toggle (basically just kills lightning bolts and stops them from being rendered)
   - Far Entities settings (so you can see entities from bigger distance)
 * Biomes and Worldgen:
-  - Oceans now generate a bit more trees
+  - Flower Forests
+* New Flowers
+  - Backported from 1.7
 * Coal Block
 * Wheat Block
 * Bone Block
@@ -30,7 +32,7 @@ Current features include:
   - there are still a few issues regarding that. splash potion doesn't work. i also want to make it so that it will take the actual player's skin (there's no skin support so i skipped it for now)
 
 Unobtainable stuff (for now):
-
+* Flowers: Poppy, Carnation, Paeonia, Black Rose
 * Sponges
 
 Other/Optional:
