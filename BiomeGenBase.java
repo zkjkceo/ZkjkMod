@@ -30,7 +30,12 @@ public abstract class BiomeGenBase {
 	public static final BiomeGenBase extremeHillsEdge = (new BiomeGenHills(20)).setColor(7501978).setBiomeName("Extreme Hills Edge").setMinMaxHeight(0.2F, 0.8F).setTemperatureRainfall(0.2F, 0.3F);
 	public static final BiomeGenBase jungle = (new BiomeGenJungle(21)).setColor(5470985).setBiomeName("Jungle").func_76733_a(5470985).setTemperatureRainfall(1.2F, 0.9F).setMinMaxHeight(0.2F, 0.4F);
 	public static final BiomeGenBase jungleHills = (new BiomeGenJungle(22)).setColor(2900485).setBiomeName("JungleHills").func_76733_a(5470985).setTemperatureRainfall(1.2F, 0.9F).setMinMaxHeight(1.8F, 0.5F);
+	
+	public static final BiomeGenBase deepOcean = (new BiomeGenOcean(24)).setColor(48).setBiomeName("DeepOcean").setMinMaxHeight(-1.5F, 0.3F);
+	public static final BiomeGenBase roofedForest = (new BiomeGenRoofedForest(29)).setColor(4215066).setBiomeName("RoofedForest").func_76733_a(5159473).setTemperatureRainfall(0.7F, 0.8F);
 	public static final BiomeGenBase flowerForest = (new BiomeGenFlowerForest(132)).setColor(3538250).setBiomeName("FlowerForest").func_76733_a(5159473).setTemperatureRainfall(0.7F, 0.8F);
+	public static final BiomeGenBase roofedForestHills = (new BiomeGenRoofedForest(157)).setColor(3293204).setBiomeName("RoofedForestHills").func_76733_a(5159473).setTemperatureRainfall(0.7F, 0.8F).setMinMaxHeight(1.8F, 0.5F); //chose this ID as it's Dark Forest Mutated in later releases
+	
 	public String biomeName;
 	public int color;
 	public byte topBlock = (byte)Block.grass.blockID;

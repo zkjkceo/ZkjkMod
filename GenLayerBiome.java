@@ -21,12 +21,20 @@ public class GenLayerBiome extends GenLayer {
 				this.initChunkSeed((long)(var8 + var1), (long)(var7 + var2));
 				int var9 = var5[var8 + var7 * var3];
 				if(var9 == 0) {
-					var6[var8 + var7 * var3] = 0;
+					if(this.nextInt(3) == 0) {
+						var6[var8 + var7 * var3] = BiomeGenBase.deepOcean.biomeID;
+					} else {
+						var6[var8 + var7 * var3] = 0;
+					}
 				} else if(var9 == BiomeGenBase.mushroomIsland.biomeID) {
 					var6[var8 + var7 * var3] = var9;
 				} else if(var9 == 1) {
-					if(this.nextInt(30) == 0) {
-						var6[var8 + var7 * var3] = BiomeGenBase.flowerForest.biomeID;
+					if(this.nextInt(15) == 0) {
+						if(this.nextInt(2) == 0) {
+							var6[var8 + var7 * var3] = BiomeGenBase.flowerForest.biomeID;
+						} else {
+							var6[var8 + var7 * var3] = BiomeGenBase.roofedForest.biomeID;
+						}
 					} else {
 					var6[var8 + var7 * var3] = this.allowedBiomes[this.nextInt(this.allowedBiomes.length)].biomeID;
 					}
