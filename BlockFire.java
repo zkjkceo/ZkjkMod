@@ -22,7 +22,9 @@ public class BlockFire extends Block {
 		this.setBurnRate(Block.stairsWoodSpruce.blockID, 5, 20);
 		this.setBurnRate(Block.stairsWoodJungle.blockID, 5, 20);
 		this.setBurnRate(Block.wood.blockID, 5, 5);
+		this.setBurnRate(Block.wood2.blockID, 5, 5);
 		this.setBurnRate(Block.leaves.blockID, 30, 60);
+		this.setBurnRate(Block.leaves2.blockID, 30, 60);
 		this.setBurnRate(Block.bookShelf.blockID, 30, 20);
 		this.setBurnRate(Block.tnt.blockID, 15, 100);
 		this.setBurnRate(Block.tallGrass.blockID, 60, 100);
@@ -110,18 +112,16 @@ public class BlockFire extends Block {
 									}
 
 									int var14 = this.getChanceOfNeighborsEncouragingFire(var1, var10, var12, var11);
-									if(var14 > 0) {
-										int var15 = (var14 + 40 + var1.difficultySetting * 7) / (var7 + 30);
-										if(var8) {
-											var15 /= 2;
+									
+									BiomeGenBase biome = var1.getBiomeGenForCoords(var10, var11);
+									boolean isHumid = biome == BiomeGenBase.jungle || biome == BiomeGenBase.jungleHills;
+									
+									if(var14 > 0 && var5.nextInt(var13) <= var14 && (!var1.isRaining() || !var1.canLightningStrikeAt(var10, var12, var11)) && !var1.canLightningStrikeAt(var10 - 1, var12, var4) && !var1.canLightningStrikeAt(var10 + 1, var12, var11) && !var1.canLightningStrikeAt(var10, var12, var11 - 1) && !var1.canLightningStrikeAt(var10, var12, var11 + 1)) {
+										int var16 = var7 + var5.nextInt(5) / 4;
+										if(var16 > 15) {
+											var16 = 15;
 										}
-
-										if(var15 > 0 && var5.nextInt(var13) <= var15 && (!var1.isRaining() || !var1.canLightningStrikeAt(var10, var12, var11)) && !var1.canLightningStrikeAt(var10 - 1, var12, var4) && !var1.canLightningStrikeAt(var10 + 1, var12, var11) && !var1.canLightningStrikeAt(var10, var12, var11 - 1) && !var1.canLightningStrikeAt(var10, var12, var11 + 1)) {
-											int var16 = var7 + var5.nextInt(5) / 4;
-											if(var16 > 15) {
-												var16 = 15;
-											}
-
+										if(!isHumid || var5.nextInt(5)==0) {
 											var1.setBlock(var10, var12, var11, this.blockID, var16, 3);
 										}
 									}
