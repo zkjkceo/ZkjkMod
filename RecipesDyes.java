@@ -11,7 +11,21 @@ public class RecipesDyes {
 		}
 
 		var1.addShapelessRecipe(new ItemStack(Item.dyePowder, 2, 11), new Object[]{Block.plantYellow});
-		var1.addShapelessRecipe(new ItemStack(Item.dyePowder, 2, 1), new Object[]{Block.plantRed});
+		
+		var1.addShapelessRecipe(new ItemStack(Item.dyePowder, 2, 1), new Object[]{new ItemStack(Block.plantRed, 1, 0)}); //rose to red dye
+		var1.addShapelessRecipe(new ItemStack(Item.dyePowder, 2, 12), new Object[]{new ItemStack(Block.plantRed, 1, 1)}); //blue orchid to light blue dye
+		var1.addShapelessRecipe(new ItemStack(Item.dyePowder, 2, 13), new Object[]{new ItemStack(Block.plantRed, 1, 2)}); //allium to magenta dye
+		var1.addShapelessRecipe(new ItemStack(Item.dyePowder, 2, 7), new Object[]{new ItemStack(Block.plantRed, 1, 3)}); //azure bluets to light gray dye
+		var1.addShapelessRecipe(new ItemStack(Item.dyePowder, 2, 1), new Object[]{new ItemStack(Block.plantRed, 1, 4)}); //red tulips to red dye
+		var1.addShapelessRecipe(new ItemStack(Item.dyePowder, 2, 14), new Object[]{new ItemStack(Block.plantRed, 1, 5)}); //orange tulips to orange dye
+		var1.addShapelessRecipe(new ItemStack(Item.dyePowder, 2, 7), new Object[]{new ItemStack(Block.plantRed, 1, 6)}); //white tulips tulips to light gray dye
+		var1.addShapelessRecipe(new ItemStack(Item.dyePowder, 2, 9), new Object[]{new ItemStack(Block.plantRed, 1, 7)}); //pink tulips tulips to pink dye
+		var1.addShapelessRecipe(new ItemStack(Item.dyePowder, 2, 7), new Object[]{new ItemStack(Block.plantRed, 1, 8)}); //oxeye daisys to light gray dye
+		var1.addShapelessRecipe(new ItemStack(Item.dyePowder, 2, 11), new Object[]{new ItemStack(Block.plantRed, 1, 9)}); //yellow tulips tulips to yellow dye
+		var1.addShapelessRecipe(new ItemStack(Item.dyePowder, 2, 1), new Object[]{new ItemStack(Block.plantRed, 1, 10)}); //poppys to red dye
+		var1.addShapelessRecipe(new ItemStack(Item.dyePowder, 2, 13), new Object[]{new ItemStack(Block.plantRed, 1, 11)}); //carnations to magenta dye
+		var1.addShapelessRecipe(new ItemStack(Item.dyePowder, 2, 9), new Object[]{new ItemStack(Block.plantRed, 1, 12)}); //paeonia to pink dye
+		
 		var1.addShapelessRecipe(new ItemStack(Item.dyePowder, 2, 1), new Object[]{Item.beetroot});
 		var1.addShapelessRecipe(new ItemStack(Item.dyePowder, 3, 15), new Object[]{Item.bone});
 		var1.addShapelessRecipe(new ItemStack(Item.dyePowder, 27, 15), new Object[]{Block.blockBone});
