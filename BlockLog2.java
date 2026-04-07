@@ -3,13 +3,13 @@ package net.minecraft.src;
 import java.util.List;
 import java.util.Random;
 
-public class BlockLog extends Block {
-	public static final String[] woodType = new String[]{"oak", "spruce", "birch", "jungle"};
-	public static final String[] treeTextureTypes = new String[]{"tree_side", "tree_spruce", "tree_birch", "tree_jungle"};
+public class BlockLog2 extends Block {
+	public static final String[] woodType = new String[]{"placeholder", "dark_oak", "placeholder", "placeholder"};
+	public static final String[] treeTextureTypes = new String[]{"tree_placeholder", "tree_dark_oak", "tree_placeholder", "tree_placeholder"};
 	private Icon[] iconArray;
 	private Icon tree_top;
 
-	protected BlockLog(int var1) {
+	protected BlockLog2(int var1) {
 		super(var1, Material.wood);
 		this.setCreativeTab(CreativeTabs.tabBlock);
 	}
@@ -23,7 +23,7 @@ public class BlockLog extends Block {
 	}
 
 	public int idDropped(int var1, Random var2, int var3) {
-		return Block.wood.blockID;
+		return Block.wood2.blockID;
 	}
 
 	public void breakBlock(World var1, int var2, int var3, int var4, int var5, int var6) {
@@ -88,10 +88,10 @@ public class BlockLog extends Block {
 	}
 
 	public void getSubBlocks(int var1, CreativeTabs var2, List var3) {
-		var3.add(new ItemStack(var1, 1, 0));
-		var3.add(new ItemStack(var1, 1, 1));
-		var3.add(new ItemStack(var1, 1, 2));
-		var3.add(new ItemStack(var1, 1, 3));
+		//var3.add(new ItemStack(var1, 1, 0));
+		var3.add(new ItemStack(var1, 1, 1)); //dark oak
+		//var3.add(new ItemStack(var1, 1, 2));
+		//var3.add(new ItemStack(var1, 1, 3));
 	}
 
 	protected ItemStack createStackedBlock(int var1) {

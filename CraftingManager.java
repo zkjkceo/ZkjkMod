@@ -55,6 +55,7 @@ public class CraftingManager {
 		this.addRecipe(new ItemStack(Block.woodSingleSlab, 6, 2), new Object[]{"###", Character.valueOf('#'), new ItemStack(Block.planks, 1, 2)});
 		this.addRecipe(new ItemStack(Block.woodSingleSlab, 6, 1), new Object[]{"###", Character.valueOf('#'), new ItemStack(Block.planks, 1, 1)});
 		this.addRecipe(new ItemStack(Block.woodSingleSlab, 6, 3), new Object[]{"###", Character.valueOf('#'), new ItemStack(Block.planks, 1, 3)});
+		this.addRecipe(new ItemStack(Block.woodSingleSlab, 6, 5), new Object[]{"###", Character.valueOf('#'), new ItemStack(Block.planks, 1, 5)}); //dark oak
 		this.addRecipe(new ItemStack(Block.ladder, 3), new Object[]{"# #", "###", "# #", Character.valueOf('#'), Item.stick});
 		this.addRecipe(new ItemStack(Item.doorWood, 1), new Object[]{"##", "##", "##", Character.valueOf('#'), Block.planks});
 		this.addRecipe(new ItemStack(Block.trapdoor, 2), new Object[]{"###", "###", Character.valueOf('#'), Block.planks});
@@ -66,6 +67,7 @@ public class CraftingManager {
 		this.addRecipe(new ItemStack(Block.planks, 4, 1), new Object[]{"#", Character.valueOf('#'), new ItemStack(Block.wood, 1, 1)});
 		this.addRecipe(new ItemStack(Block.planks, 4, 2), new Object[]{"#", Character.valueOf('#'), new ItemStack(Block.wood, 1, 2)});
 		this.addRecipe(new ItemStack(Block.planks, 4, 3), new Object[]{"#", Character.valueOf('#'), new ItemStack(Block.wood, 1, 3)});
+		this.addRecipe(new ItemStack(Block.planks, 4, 5), new Object[]{"#", Character.valueOf('#'), new ItemStack(Block.wood2, 1, 1)}); //dark oak
 		this.addRecipe(new ItemStack(Item.stick, 4), new Object[]{"#", "#", Character.valueOf('#'), Block.planks});
 		this.addRecipe(new ItemStack(Block.torchWood, 4), new Object[]{"X", "#", Character.valueOf('X'), Item.coal, Character.valueOf('#'), Item.stick});
 		this.addRecipe(new ItemStack(Block.torchWood, 4), new Object[]{"X", "#", Character.valueOf('X'), new ItemStack(Item.coal, 1, 1), Character.valueOf('#'), Item.stick});
@@ -93,6 +95,7 @@ public class CraftingManager {
 		this.addRecipe(new ItemStack(Block.stairsWoodBirch, 4), new Object[]{"#  ", "## ", "###", Character.valueOf('#'), new ItemStack(Block.planks, 1, 2)});
 		this.addRecipe(new ItemStack(Block.stairsWoodSpruce, 4), new Object[]{"#  ", "## ", "###", Character.valueOf('#'), new ItemStack(Block.planks, 1, 1)});
 		this.addRecipe(new ItemStack(Block.stairsWoodJungle, 4), new Object[]{"#  ", "## ", "###", Character.valueOf('#'), new ItemStack(Block.planks, 1, 3)});
+		this.addRecipe(new ItemStack(Block.stairsWoodDarkOak, 4), new Object[]{"#  ", "## ", "###", Character.valueOf('#'), new ItemStack(Block.planks, 1, 5)}); //dark oak
 		this.addRecipe(new ItemStack(Item.fishingRod, 1), new Object[]{"  #", " #X", "# X", Character.valueOf('#'), Item.stick, Character.valueOf('X'), Item.silk});
 		this.addRecipe(new ItemStack(Item.carrotOnAStick, 1), new Object[]{"# ", " X", Character.valueOf('#'), Item.fishingRod, Character.valueOf('X'), Item.carrot}).func_92100_c();
 		this.addRecipe(new ItemStack(Block.stairsCobblestone, 4), new Object[]{"#  ", "## ", "###", Character.valueOf('#'), Block.cobblestone});
