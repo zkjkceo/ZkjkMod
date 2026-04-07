@@ -13,4 +13,8 @@ public class BiomeGenFlowerForest extends BiomeGenForest {
 		this.theBiomeDecorator.oxeyeDaisyPerChunk = 3; //oxeye daisy
 		this.theBiomeDecorator.azureBluetsPerChunk = 3; //azure bluet
 	}
+	
+	public WorldGenerator getRandomWorldGenForTrees(Random var1) {
+		return (WorldGenerator)(var1.nextInt(5) == 0 ? this.worldGeneratorTrees : (var1.nextInt(10) == 0 ? this.worldGeneratorBigTree : this.worldGeneratorForest));
+	}
 }
