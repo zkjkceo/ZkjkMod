@@ -12,7 +12,7 @@ Current features include:
 * Biomes and Worldgen:
   - Flower Forests
   - Deep Oceans (issue: rivers might not run into oceans. i had to fix rivers making outlines around deep oceans)
-  - Dark Forest (HEAVY WIP, they will have some cobweb too)
+  - Dark Forest (WIP, i have to alter dark oak generation code to match 1.7 better)
 * New Flowers
   - Backported from 1.7
 * Coal Block
