@@ -12,12 +12,13 @@ Current features include:
 * Biomes and Worldgen:
   - Flower Forests
   - Deep Oceans (issue: rivers might not run into oceans. i had to fix rivers making outlines around deep oceans)
-  - Dark Forest (PLACEHOLDER FOR NOW, no dark oak yet)
+  - Dark Forest (HEAVY WIP, they will have some cobweb too)
 * New Flowers
   - Backported from 1.7
 * Coal Block
 * Wheat Block
 * Bone Block
+* Dark Oak Wood
 * Recipes for Stone Brick variants
 * Wool bleaching (craft white wool from any other wool color)
 * Fixed Disc 11
@@ -51,7 +52,6 @@ Planned features:
 * Player spawn point compass
 * Boats for 2 players
 * Biome changes and new biomes
-  - Dark Oak Forest + Hills of this biome
   - Snowless Taiga + Hills of this biome
 * Runes. Unique enchantment, one per item
 * New bosses
