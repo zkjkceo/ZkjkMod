@@ -22,6 +22,7 @@ Current features include:
 * Recipes for Stone Brick variants
 * Wool bleaching (craft white wool from any other wool color)
 * Fixed Disc 11
+* Sit on stairs
 * New Big Monster Rooms. You can find Fixed Disc 11 in there only.
 * Strongholds everywhere in the world (Eyes of Ender still guide you to the 3 vanilla strongholds)
 * Mineshafts are rarer (still more common than my random strongholds)
