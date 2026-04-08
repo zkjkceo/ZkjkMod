@@ -9,6 +9,7 @@ public class ZkjkConfig {
     public static int logRotation = 0;
 	public static int farEntities = 0;
 	public static int thunder = 0;
+	public static int sitting = 0;
 
     private static File configFile;
 
@@ -45,6 +46,7 @@ public class ZkjkConfig {
 			logRotation = Integer.parseInt(props.getProperty("logRotation", "0"));
 			farEntities = Integer.parseInt(props.getProperty("farEntities", "0"));
 			thunder = Integer.parseInt(props.getProperty("thunder", "0"));
+			sitting = Integer.parseInt(props.getProperty("sitting", "0"));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -58,6 +60,7 @@ public class ZkjkConfig {
 			props.setProperty("logRotation", String.valueOf(logRotation));
 			props.setProperty("farEntities", String.valueOf(farEntities));
 			props.setProperty("thunder", String.valueOf(thunder));
+			props.setProperty("sitting", String.valueOf(sitting));
 
 			FileOutputStream out = new FileOutputStream(configFile);
 			props.store(out, "ZkjkMod Config");

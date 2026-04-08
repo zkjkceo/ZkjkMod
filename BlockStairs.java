@@ -326,6 +326,9 @@ public class BlockStairs extends Block {
 	}
 
 	public boolean onBlockActivated(World var1, int var2, int var3, int var4, EntityPlayer var5, int var6, float var7, float var8, float var9) {
+		if (ZkjkConfig.sitting==0) {
+			return false;
+		}
 		if (!var1.isRemote) {
 			List list = var1.getEntitiesWithinAABB(EntityArrowMarker.class, AxisAlignedBB.getBoundingBox(var2, var3, var4, var2+1, var3+1, var4+1));
 			if(!list.isEmpty()) {

@@ -10,7 +10,8 @@ public class GuiZkjkMod extends GuiScreen {
         this.buttonList.add(new GuiButton(1, this.width / 2 - 100, 80, getLogRotationText()));
 		this.buttonList.add(new GuiButton(2, this.width / 2 - 100, 105, getFarEntitiesText()));
 		this.buttonList.add(new GuiButton(3, this.width / 2 - 100, 130, getThunderText()));
-        this.buttonList.add(new GuiButton(30, this.width / 2 - 100, 155, "Done"));
+		this.buttonList.add(new GuiButton(4, this.width / 2 - 100, 155, getSittingText()));
+        this.buttonList.add(new GuiButton(30, this.width / 2 - 100, 180, "Done"));
     }
 
     protected void actionPerformed(GuiButton button) {
@@ -38,6 +39,15 @@ public class GuiZkjkMod extends GuiScreen {
 				ZkjkConfig.thunder = 0;
 			}
 			button.displayString = getThunderText();
+			ZkjkConfig.save();
+		}
+		
+		if (button.id == 4) {
+			ZkjkConfig.sitting++;
+			if (ZkjkConfig.sitting > 1) {
+				ZkjkConfig.sitting = 0;
+			}
+			button.displayString = getSittingText();
 			ZkjkConfig.save();
 		}
 
@@ -83,6 +93,14 @@ public class GuiZkjkMod extends GuiScreen {
 			case 0: return "Thunder: ON";
 			case 1: return "Thunder: OFF";
 			default: return "Thunder: ?";
+		}
+	}
+	
+	private String getSittingText() {
+		switch (ZkjkConfig.sitting) {
+			case 0: return "Sitting: OFF";
+			case 1: return "Sitting: ON";
+			default: return "Sitting: ?";
 		}
 	}
 }
