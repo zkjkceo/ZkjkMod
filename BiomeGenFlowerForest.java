@@ -15,6 +15,6 @@ public class BiomeGenFlowerForest extends BiomeGenForest {
 	}
 	
 	public WorldGenerator getRandomWorldGenForTrees(Random var1) {
-		return (WorldGenerator)(var1.nextInt(5) == 0 ? this.worldGeneratorTrees : (var1.nextInt(10) == 0 ? this.worldGeneratorBigTree : this.worldGeneratorForest));
+		return (WorldGenerator)(var1.nextInt(5) == 0 ? this.worldGeneratorTrees : (var1.nextInt(10) == 0 ? this.worldGeneratorBigTree : this.worldGeneratorForest)); //switched birch with oak so more generates
 	}
 }

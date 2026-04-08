@@ -817,7 +817,7 @@ public class Block {
 		Item.itemsList[sponge.blockID] = (new ItemSponge(sponge.blockID - 256)).setUnlocalizedName("sponge");
 		Item.itemsList[plantRed.blockID] = (new ItemMultiTextureTile(plantRed.blockID - 256, plantRed, BlockFlower.FLOWER_TYPES)).setUnlocalizedName("rose");
 		Item.itemsList[wood2.blockID] = (new ItemMultiTextureTile(wood2.blockID - 256, wood2, BlockLog2.woodType)).setUnlocalizedName("log2");
-		Item.itemsList[leaves2.blockID] = (new ItemLeaves(leaves2.blockID - 256)).setUnlocalizedName("leaves2");
+		Item.itemsList[leaves2.blockID] = (new ItemLeaves2(leaves2.blockID - 256)).setUnlocalizedName("leaves2");
 		Item.itemsList[sapling2.blockID] = (new ItemMultiTextureTile(sapling2.blockID - 256, sapling2, BlockSapling2.WOOD_TYPES)).setUnlocalizedName("sapling2");
 		//Item.itemsList[doublePlant.blockID] = (new ItemMultiTextureTile(doublePlant.blockID - 256, doublePlant, BlockDoublePlant.DOUBLE_PLANT_TYPES)).setUnlocalizedName("doublePlant");
 

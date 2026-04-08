@@ -4,8 +4,8 @@ import java.util.List;
 import java.util.Random;
 
 public class BlockLeaves2 extends BlockLeavesBase {
-	public static final String[] LEAF_TYPES = new String[]{"placeholder", "dark_oak", "placeholder", "placeholder"};
-	public static final String[][] field_94396_b = new String[][]{{"leaves_placeholder", "leaves_dark_oak", "leaves_placeholder", "leaves_placeholder"}, {"leaves_placeholder_opaque", "leaves_dark_oak_opaque", "leaves_placeholder_opaque", "leaves_placeholder_opaque"}};
+	public static final String[] LEAF_TYPES = new String[]{"placeholder1", "dark_oak", "placeholder3", "placeholder4"};
+	public static final String[][] field_94396_b = new String[][]{{"leaves_placeholder1", "leaves_dark_oak", "leaves_placeholder3", "leaves_placeholder4"}, {"leaves_placeholder1_opaque", "leaves_dark_oak_opaque", "leaves_placeholder3_opaque", "leaves_placeholder4_opaque"}};
 	private int field_94394_cP;
 	private Icon[][] iconArray = new Icon[2][];
 	int[] adjacentTreeBlocks;
@@ -58,6 +58,8 @@ public class BlockLeaves2 extends BlockLeavesBase {
 				}
 			}
 		}
+		ItemStack stack = new ItemStack(Block.leaves2, 1, 1); // meta 1 = dark oak
+		System.out.println(stack.getItem().getUnlocalizedName(stack));
 	}
 
 	public void updateTick(World var1, int var2, int var3, int var4, Random var5) {
