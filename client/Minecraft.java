@@ -198,6 +198,8 @@ public abstract class Minecraft implements Runnable, IPlayerUsage {
 	int fpsCounter = 0;
 	long prevFrameTime = -1L;
 	private String debugProfilerName = "root";
+	private boolean lastFancyGraphics;
+	private boolean leavesInitialized = false;
 
 	public Minecraft(Canvas var1, MinecraftApplet var2, int var3, int var4, boolean var5) {
 		StatList.nopInit();
@@ -1323,6 +1325,20 @@ public abstract class Minecraft implements Runnable, IPlayerUsage {
 		}
 
 		if(this.theWorld != null) {
+			
+			boolean fancy = this.gameSettings.fancyGraphics;
+			if (!leavesInitialized) {
+				leavesInitialized = true;
+				lastFancyGraphics = fancy;
+				Block.leaves2.setGraphicsLevel(fancy);
+				this.renderGlobal.loadRenderers();
+			}
+			if (fancy != lastFancyGraphics) {
+				lastFancyGraphics = fancy;
+				Block.leaves2.setGraphicsLevel(fancy);
+				this.renderGlobal.loadRenderers();
+			}
+			
 			if(this.thePlayer != null) {
 				++this.joinPlayerCounter;
 				if(this.joinPlayerCounter == 30) {
@@ -1449,6 +1465,7 @@ public abstract class Minecraft implements Runnable, IPlayerUsage {
 
 	public void loadWorld(WorldClient var1, String var2) {
 		this.statFileWriter.syncStats();
+		this.leavesInitialized = false;
 		if(var1 == null) {
 			NetClientHandler var3 = this.getNetHandler();
 			if(var3 != null) {
