@@ -6,11 +6,17 @@ public class BiomeGenRoofedForest extends BiomeGenBase {
 	
 	public BiomeGenRoofedForest(int var1) {
 		super(var1);
-		this.theBiomeDecorator.treesPerChunk = 10;
-		this.theBiomeDecorator.grassPerChunk = 2;
+		this.theBiomeDecorator.treesPerChunk = 15;
+		this.theBiomeDecorator.grassPerChunk = 10;
+		this.theBiomeDecorator.mushroomsPerChunk = 10;
+		this.theBiomeDecorator.bigMushroomsPerChunk = 4;
+		this.theBiomeDecorator.cobwebPerChunk = 20;
+		
+		this.spawnableMonsterList.add(new SpawnListEntry(EntitySpider.class, 100, 6, 12));
+		this.spawnableCreatureList.clear();
 	}
 	public WorldGenerator getRandomWorldGenForTrees(Random var1) {
-		return (WorldGenerator)(new WorldGenHugeTrees2(false, 4 + var1.nextInt(4), 1, 1));
+		return (WorldGenerator)(new WorldGenHugeTrees2(false));
 	}
 	
 	public int getBiomeGrassColor() {
@@ -32,26 +38,6 @@ public class BiomeGenRoofedForest extends BiomeGenBase {
 	}
 	
 	public void decorate(World world, Random rand, int x, int z) {
-		int var5;
-        int var6;
-        int var7;
-        int var8;
-        int var9;
 		super.decorate(world, rand, x, z);
-		for (var5 = 0; var5 < 4; ++var5)
-        {
-			for (var6 = 0; var6 < 4; ++var6)
-			{
-				var7 = x + var5 * 4 + 1 + 8 + rand.nextInt(3);
-				var8 = z + var6 * 4 + 1 + 8 + rand.nextInt(3);
-				var9 = world.getHeightValue(var7, var8);
-
-				if (rand.nextInt(2) == 0)
-				{
-					WorldGenBigMushroom var10 = new WorldGenBigMushroom();
-					var10.generate(world, rand, var7, var9, var8);
-				}
-			}
-        }
 	}
 }

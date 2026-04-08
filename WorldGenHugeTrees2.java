@@ -3,129 +3,209 @@ package net.minecraft.src;
 import java.util.Random;
 
 public class WorldGenHugeTrees2 extends WorldGenerator {
-	private final int baseHeight;
-	private final int woodMetadata;
-	private final int leavesMetadata;
 
-	public WorldGenHugeTrees2(boolean var1, int var2, int var3, int var4) {
+	public WorldGenHugeTrees2(boolean var1) {
 		super(var1);
-		this.baseHeight = var2;
-		this.woodMetadata = var3;
-		this.leavesMetadata = var4;
 	}
 	
-	//this generation was taken from jungle trees. I will make it similar to 1.7 dark oak trees someday...
-	public boolean generate(World var1, Random var2, int var3, int var4, int var5) {
-		int var6 = var2.nextInt(3) + var2.nextInt(2) + 6;
-		boolean var7 = true;
-		if(var4 >= 1 && var4 + var6 + 1 <= 256) {
-			int var8;
-			int var10;
-			int var11;
-			int var12;
-			for(var8 = var4; var8 <= var4 + 1 + var6; ++var8) {
-				byte var9 = 2;
-				if(var8 == var4) {
-					var9 = 1;
-				}
+	//translated code from 1.7
+    public boolean generate(World world, Random rand, int x, int y, int z)
+    {
+        int var6 = rand.nextInt(3) + rand.nextInt(2) + 6;
+        boolean var7 = true;
 
-				if(var8 >= var4 + 1 + var6 - 2) {
-					var9 = 2;
-				}
+        if (y >= 1 && y + var6 + 1 <= 256)
+        {
+            int var10;
+            int var11;
 
-				for(var10 = var3 - var9; var10 <= var3 + var9 && var7; ++var10) {
-					for(var11 = var5 - var9; var11 <= var5 + var9 && var7; ++var11) {
-						if(var8 >= 0 && var8 < 256) {
-							var12 = var1.getBlockId(var10, var8, var11);
-							if(var12 != 0 && var12 != Block.leaves.blockID && var12 != Block.wood.blockID && var12 != Block.sapling.blockID && var12 != Block.leaves2.blockID && var12 != Block.grass.blockID && var12 != Block.dirt.blockID && var12 != Block.wood2.blockID && var12 != Block.sapling2.blockID) {
-								var7 = false;
-							}
-						} else {
-							var7 = false;
-						}
-					}
-				}
-			}
+            for (int var8 = y; var8 <= y + 1 + var6; ++var8)
+            {
+                byte var9 = 1;
 
-			if(!var7) {
-				return false;
-			} else {
-				var8 = var1.getBlockId(var3, var4 - 1, var5);
-				if((var8 == Block.grass.blockID || var8 == Block.dirt.blockID) && var4 < 256 - var6 - 1) {
-					var1.setBlock(var3, var4 - 1, var5, Block.dirt.blockID, 0, 2);
-					var1.setBlock(var3 + 1, var4 - 1, var5, Block.dirt.blockID, 0, 2);
-					var1.setBlock(var3, var4 - 1, var5 + 1, Block.dirt.blockID, 0, 2);
-					var1.setBlock(var3 + 1, var4 - 1, var5 + 1, Block.dirt.blockID, 0, 2);
-					this.growLeaves(var1, var3, var5, var4 + var6, 2, var2);
+                if (var8 == y)
+                {
+                    var9 = 0;
+                }
 
-					for(int var14 = var4 + var6 - 2 - var2.nextInt(4); var14 > var4 + var6 / 2; var14 -= 2 + var2.nextInt(4)) {
-						float var15 = var2.nextFloat() * (float)Math.PI * 2.0F;
-						var11 = var3 + (int)(0.5F + MathHelper.cos(var15) * 4.0F);
-						var12 = var5 + (int)(0.5F + MathHelper.sin(var15) * 4.0F);
-						this.growLeaves(var1, var11, var12, var14, 0, var2);
+                if (var8 >= y + 1 + var6 - 2)
+                {
+                    var9 = 2;
+                }
 
-						for(int var13 = 0; var13 < 5; ++var13) {
-							var11 = var3 + (int)(1.5F + MathHelper.cos(var15) * (float)var13);
-							var12 = var5 + (int)(1.5F + MathHelper.sin(var15) * (float)var13);
-							this.setBlockAndMetadata(var1, var11, var14 - 3 + var13 / 2, var12, Block.wood2.blockID, this.woodMetadata);
-						}
-					}
+                for (var10 = x - var9; var10 <= x + var9 && var7; ++var10)
+                {
+                    for (var11 = z - var9; var11 <= z + var9 && var7; ++var11)
+                    {
+                        if (var8 >= 0 && var8 < 256)
+                        {
+                            if (!isReplaceable(world, var10, var8, var11))
+                            {
+                                var7 = false;
+                            }
+                        }
+                        else
+                        {
+                            var7 = false;
+                        }
+                    }
+                }
+            }
 
-					for(var10 = 0; var10 < var6; ++var10) {
-						var11 = var1.getBlockId(var3, var4 + var10, var5);
-						if(var11 == 0 || var11 == Block.leaves2.blockID || var11 == Block.leaves2.blockID) {
-							this.setBlockAndMetadata(var1, var3, var4 + var10, var5, Block.wood2.blockID, this.woodMetadata);
-						}
+            if (!var7)
+            {
+                return false;
+            }
+            else
+            {
+                int var20 = world.getBlockId(x, y - 1, z);
+                if ((var20 == Block.grass.blockID || var20 == Block.dirt.blockID) && y < 256 - var6 - 1)
+                {
+                    world.setBlock(x, y - 1, z, Block.dirt.blockID, 0, 2);
+                    world.setBlock(x + 1, y - 1, z, Block.dirt.blockID, 0, 2);
+                    world.setBlock(x + 1, y - 1, z + 1, Block.dirt.blockID, 0, 2);
+                    world.setBlock(x, y - 1, z + 1, Block.dirt.blockID, 0, 2);
+                    int var21 = rand.nextInt(4);
+                    var10 = var6 - rand.nextInt(4);
+                    var11 = 2 - rand.nextInt(3);
+                    int var22 = x;
+                    int var13 = z;
+                    int var14 = 0;
+                    int var15;
+                    int var16;
 
-						if(var10 < var6 - 1) {
-							var11 = var1.getBlockId(var3 + 1, var4 + var10, var5);
-							if(var11 == 0 || var11 == Block.leaves2.blockID || var11 == Block.leaves2.blockID) {
-								this.setBlockAndMetadata(var1, var3 + 1, var4 + var10, var5, Block.wood2.blockID, this.woodMetadata);
-							}
+                    for (var15 = 0; var15 < var6; ++var15)
+                    {
+                        var16 = y + var15;
 
-							var11 = var1.getBlockId(var3 + 1, var4 + var10, var5 + 1);
-							if(var11 == 0 || var11 == Block.leaves2.blockID || var11 == Block.leaves2.blockID) {
-								this.setBlockAndMetadata(var1, var3 + 1, var4 + var10, var5 + 1, Block.wood2.blockID, this.woodMetadata);
-							}
+                        if (var15 >= var10 && var11 > 0)
+                        {
+                            var22 += Direction.offsetX[var21];
+                            var13 += Direction.offsetZ[var21];
+                            --var11;
+                        }
 
-							var11 = var1.getBlockId(var3, var4 + var10, var5 + 1);
-							if(var11 == 0 || var11 == Block.leaves2.blockID || var11 == Block.leaves2.blockID) {
-								this.setBlockAndMetadata(var1, var3, var4 + var10, var5 + 1, Block.wood2.blockID, this.woodMetadata);
-							}
-						}
-					}
+                        int var17 = world.getBlockId(var22, var16, var13);
 
-					return true;
-				} else {
-					return false;
-				}
-			}
-		} else {
-			return false;
-		}
-	}
+                        if (var17 == 0 || var17 == Block.leaves2.blockID)
+                        {
+                            this.setBlockAndMetadata(world, var22, var16, var13, Block.wood2.blockID, 1);
+                            this.setBlockAndMetadata(world, var22 + 1, var16, var13, Block.wood2.blockID, 1);
+                            this.setBlockAndMetadata(world, var22, var16, var13 + 1, Block.wood2.blockID, 1);
+                            this.setBlockAndMetadata(world, var22 + 1, var16, var13 + 1, Block.wood2.blockID, 1);
+                            var14 = var16;
+                        }
+                    }
 
-	private void growLeaves(World var1, int var2, int var3, int var4, int var5, Random var6) {
-		byte var7 = 2;
+                    for (var15 = -2; var15 <= 0; ++var15)
+                    {
+                        for (var16 = -2; var16 <= 0; ++var16)
+                        {
+                            byte var23 = -1;
+                            this.placeLeafIfAir(world, var22 + var15, var14 + var23, var13 + var16);
+                            this.placeLeafIfAir(world, 1 + var22 - var15, var14 + var23, var13 + var16);
+                            this.placeLeafIfAir(world, var22 + var15, var14 + var23, 1 + var13 - var16);
+                            this.placeLeafIfAir(world, 1 + var22 - var15, var14 + var23, 1 + var13 - var16);
 
-		for(int var8 = var4 - var7; var8 <= var4; ++var8) {
-			int var9 = var8 - var4;
-			int var10 = var5 + 1 - var9;
+                            if ((var15 > -2 || var16 > -1) && (var15 != -1 || var16 != -2))
+                            {
+                                byte var24 = 1;
+                                this.placeLeafIfAir(world, var22 + var15, var14 + var24, var13 + var16);
+                                this.placeLeafIfAir(world, 1 + var22 - var15, var14 + var24, var13 + var16);
+                                this.placeLeafIfAir(world, var22 + var15, var14 + var24, 1 + var13 - var16);
+                                this.placeLeafIfAir(world, 1 + var22 - var15, var14 + var24, 1 + var13 - var16);
+                            }
+                        }
+                    }
 
-			for(int var11 = var2 - var10; var11 <= var2 + var10 + 1; ++var11) {
-				int var12 = var11 - var2;
+                    if (rand.nextBoolean())
+                    {
+                        this.placeLeafIfAir(world, var22, var14 + 2, var13);
+                        this.placeLeafIfAir(world, var22 + 1, var14 + 2, var13);
+                        this.placeLeafIfAir(world, var22 + 1, var14 + 2, var13 + 1);
+                        this.placeLeafIfAir(world, var22, var14 + 2, var13 + 1);
+                    }
 
-				for(int var13 = var3 - var10; var13 <= var3 + var10 + 1; ++var13) {
-					int var14 = var13 - var3;
-					if((var12 >= 0 || var14 >= 0 || var12 * var12 + var14 * var14 <= var10 * var10) && (var12 <= 0 && var14 <= 0 || var12 * var12 + var14 * var14 <= (var10 + 1) * (var10 + 1)) && (var6.nextInt(4) != 0 || var12 * var12 + var14 * var14 <= (var10 - 1) * (var10 - 1))) {
-						int var15 = var1.getBlockId(var11, var8, var13);
-						if(var15 == 0 || var15 == Block.leaves.blockID || var15 == Block.leaves2.blockID) {
-							this.setBlockAndMetadata(var1, var11, var8, var13, Block.leaves2.blockID, this.leavesMetadata);
-						}
-					}
-				}
-			}
-		}
+                    for (var15 = -3; var15 <= 4; ++var15)
+                    {
+                        for (var16 = -3; var16 <= 4; ++var16)
+                        {
+                            if ((var15 != -3 || var16 != -3) && (var15 != -3 || var16 != 4) && (var15 != 4 || var16 != -3) && (var15 != 4 || var16 != 4) && (Math.abs(var15) < 3 || Math.abs(var16) < 3))
+                            {
+                                this.placeLeafIfAir(world, var22 + var15, var14, var13 + var16);
+                            }
+                        }
+                    }
 
+                    for (var15 = -1; var15 <= 2; ++var15)
+                    {
+                        for (var16 = -1; var16 <= 2; ++var16)
+                        {
+                            if ((var15 < 0 || var15 > 1 || var16 < 0 || var16 > 1) && rand.nextInt(3) <= 0)
+                            {
+                                int var25 = rand.nextInt(3) + 2;
+                                int var18;
+
+                                for (var18 = 0; var18 < var25; ++var18)
+                                {
+                                    this.setBlockAndMetadata(world, x + var15, var14 - var18 - 1, z + var16, Block.wood2.blockID, 1);
+                                }
+
+                                int var19;
+
+                                for (var18 = -1; var18 <= 1; ++var18)
+                                {
+                                    for (var19 = -1; var19 <= 1; ++var19)
+                                    {
+                                        this.placeLeafIfAir(world, var22 + var15 + var18, var14 - 0, var13 + var16 + var19);
+                                    }
+                                }
+
+                                for (var18 = -2; var18 <= 2; ++var18)
+                                {
+                                    for (var19 = -2; var19 <= 2; ++var19)
+                                    {
+                                        if (Math.abs(var18) != 2 || Math.abs(var19) != 2)
+                                        {
+                                            this.placeLeafIfAir(world, var22 + var15 + var18, var14 - 1, var13 + var16 + var19);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    private void placeLeafIfAir(World world, int x, int y, int z) {
+        int id = world.getBlockId(x, y, z);
+        if (id == 0) {
+            this.setBlockAndMetadata(world, x, y, z, Block.leaves2.blockID, 1);
+        }
+    }
+	
+	private boolean isReplaceable(World world, int x, int y, int z) {
+    int id = world.getBlockId(x, y, z);
+    return id == 0 ||
+           id == Block.leaves.blockID ||
+           id == Block.leaves2.blockID ||
+           id == Block.wood.blockID ||
+           id == Block.wood2.blockID ||
+           id == Block.sapling.blockID ||
+           id == Block.sapling2.blockID ||
+           id == Block.grass.blockID ||
+           id == Block.dirt.blockID;
 	}
 }

@@ -27,6 +27,7 @@ public class BiomeDecorator {
 	protected WorldGenerator reedGen = new WorldGenReed();
 	protected WorldGenerator cactusGen = new WorldGenCactus();
 	protected WorldGenerator waterlilyGen = new WorldGenWaterlily();
+	protected WorldGenerator cobwebGen = new WorldGenCobweb(); //cobwebs
 	protected WorldGenerator plantAzureBluetsGen = new WorldGenUniqueFlowers(Block.plantRed.blockID, 3); //azure bluet
 	protected WorldGenerator plantBlueOrchidsGen = new WorldGenUniqueFlowers(Block.plantRed.blockID, 1); //blue orchid
 	protected WorldGenerator plantAlliumsGen = new WorldGenUniqueFlowers(Block.plantRed.blockID, 2); //alliums
@@ -49,6 +50,7 @@ public class BiomeDecorator {
 	protected int sandPerChunk2 = 3;
 	protected int clayPerChunk = 1;
 	protected int bigMushroomsPerChunk = 0;
+	protected int cobwebPerChunk = 0;
 	public boolean generateLakes = true;
 
 	public BiomeDecorator(BiomeGenBase var1) {
@@ -219,6 +221,13 @@ public class BiomeDecorator {
 			var3 = this.randomGenerator.nextInt(128);
 			var4 = this.chunk_Z + this.randomGenerator.nextInt(16) + 8;
 			this.mushroomRedGen.generate(this.currentWorld, this.randomGenerator, var2, var3, var4);
+		}
+		
+		for(var2 = 0; var2 < this.cobwebPerChunk; ++var2) {
+			var3 = this.chunk_X + this.randomGenerator.nextInt(16) + 8;
+			var4 = this.chunk_Z + this.randomGenerator.nextInt(16) + 8;
+			var7 = 50 + this.randomGenerator.nextInt(50);
+			this.cobwebGen.generate(this.currentWorld, this.randomGenerator, var3, var7, var4);
 		}
 
 		for(var2 = 0; var2 < this.reedsPerChunk; ++var2) {
