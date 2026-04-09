@@ -11,8 +11,8 @@ Current features include:
   - Far Entities settings (so you can see entities from bigger distance)
 * Biomes and Worldgen:
   - Flower Forests (more birch and some new flowers spawn)
-  - Deep Oceans (more spiders, zombies and skeletons spawn here. issue: rivers might not run into oceans. i had to fix rivers making outlines around deep oceans)
-  - Dark Forest (added some cobweb, i still forgot to add some other trees to it than dark oak. more spiders spawn in this biome and passive mobs don't spawn)
+  - Deep Oceans (issue: rivers might not run into oceans. i had to fix rivers making outlines around deep oceans)
+  - Dark Forest (added some cobweb, more spiders spawn in this biome and passive mobs don't spawn)
 * New Flowers
   - Backported from 1.7
 * Coal Block
