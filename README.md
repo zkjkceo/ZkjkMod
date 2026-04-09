@@ -36,13 +36,12 @@ Current features include:
   - you can make it from magical beetroot (combine lapis lazuli with beetroot)
   - it will spawn a clone for 90/180 seconds that will fight for you
   - there are still a few issues regarding that. splash potion doesn't work. i also want to make it so that it will take the actual player's skin (there's no skin support so i skipped it for now)
+* Old fire spreading
+  - Fire spreads as fast as it did in Alpha and early Beta. Fire spreads slower in humid biomes (jungle and jungle hills) to prevent EXTREME lag
 
 Unobtainable stuff (for now):
 * Flowers: Poppy, Carnation, Paeonia, Black Rose
 * Sponges
-
-Other/Optional:
-* Old fire spreading
 
 Planned features:
 * More noteblock sounds
