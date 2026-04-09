@@ -5,6 +5,7 @@ import java.util.Calendar;
 public class EntitySkeleton extends EntityMob implements IRangedAttackMob {
 	private EntityAIArrowAttack aiArrowAttack = new EntityAIArrowAttack(this, 0.25F, 20, 60, 15.0F);
 	private EntityAIAttackOnCollide aiAttackOnCollide = new EntityAIAttackOnCollide(this, EntityPlayer.class, 0.31F, false);
+	private boolean spawnedFromSpawner = false;
 
 	public EntitySkeleton(World var1) {
 		super(var1);
@@ -21,12 +22,28 @@ public class EntitySkeleton extends EntityMob implements IRangedAttackMob {
 		if(var1 != null && !var1.isRemote) {
 			this.setCombatTask();
 		}
-
+	}
+	
+	public float getSpeedModifier() {
+		return super.getSpeedModifier() * (this.isMiniBoss() ? 1.5F : 1.0F);
+	}
+	
+	protected int getExperiencePoints(EntityPlayer var1) {
+		return this.isMiniBoss() ? 50 : this.experienceValue;
 	}
 
 	protected void entityInit() {
 		super.entityInit();
 		this.dataWatcher.addObject(13, new Byte((byte)0));
+		this.getDataWatcher().addObject(15, Byte.valueOf((byte)0)); //miniboss
+	}
+	
+	public boolean isMiniBoss() {
+		return this.getDataWatcher().getWatchableObjectByte(15) == 1;
+	}
+	
+	public void setMiniBoss(boolean var1) {
+		this.getDataWatcher().updateObject(15, Byte.valueOf((byte)1));
 	}
 
 	public boolean isAIEnabled() {
@@ -84,7 +101,7 @@ public class EntitySkeleton extends EntityMob implements IRangedAttackMob {
 	}
 
 	public void onLivingUpdate() {
-		if(this.worldObj.isDaytime() && !this.worldObj.isRemote) {
+		if(this.worldObj.isDaytime() && !this.worldObj.isRemote && !this.isMiniBoss()) {
 			float var1 = this.getBrightness(1.0F);
 			if(var1 > 0.5F && this.rand.nextFloat() * 30.0F < (var1 - 0.4F) * 2.0F && this.worldObj.canBlockSeeTheSky(MathHelper.floor_double(this.posX), MathHelper.floor_double(this.posY), MathHelper.floor_double(this.posZ))) {
 				boolean var2 = true;
@@ -109,6 +126,16 @@ public class EntitySkeleton extends EntityMob implements IRangedAttackMob {
 
 		if(this.worldObj.isRemote && this.getSkeletonType() == 1) {
 			this.setSize(0.72F, 2.34F);
+		}
+		
+		if (this.worldObj.isRemote && this.isMiniBoss()) {
+			this.worldObj.spawnParticle(
+				"flame",
+				this.posX + (this.rand.nextDouble() - 0.5D) * (double)this.width,
+				this.posY + this.rand.nextDouble() * (double)this.height,
+				this.posZ + (this.rand.nextDouble() - 0.5D) * (double)this.width,
+				0.0D, 0.02D, 0.0D
+			);
 		}
 
 		super.onLivingUpdate();
@@ -169,21 +196,21 @@ public class EntitySkeleton extends EntityMob implements IRangedAttackMob {
 	}
 
 	protected void addRandomArmor() {
-		if(this.rand.nextFloat() < 0.07F) {
+		if(this.rand.nextFloat() < (this.isMiniBoss() ? 0.95F : 0.05F)) {
 			int var1 = this.rand.nextInt(2);
 			float var2 = 0.1F;
-			if(this.rand.nextFloat() < 0.095F) {
+			if(this.rand.nextFloat() < (this.isMiniBoss() ? 0.25F : 0.095F)) {
 				++var1;
 			}
 
-			if(this.rand.nextFloat() < 0.095F) {
+			if(this.rand.nextFloat() < (this.isMiniBoss() ? 0.25F : 0.095F)) {
 				++var1;
 			}
 
-			if(this.rand.nextFloat() < 0.095F) {
+			if(this.rand.nextFloat() <(this.isMiniBoss() ? 0.25F : 0.095F)) {
 				++var1;
 			}
-
+			
 			for(int var3 = 3; var3 >= 0; --var3) {
 				ItemStack var4 = this.getCurrentArmor(var3);
 				if(var3 < 3 && this.rand.nextFloat() < var2) {
@@ -203,7 +230,7 @@ public class EntitySkeleton extends EntityMob implements IRangedAttackMob {
 	}
 	
 	protected void func_82162_bC() {
-		if(this.getHeldItem() != null && this.rand.nextFloat() < 0.2F) {
+		if(this.getHeldItem() != null && this.rand.nextFloat() < (this.isMiniBoss() ? 0.75F : 0.2F)) {
 			double r = this.rand.nextDouble();
 			int level = (int)(5 + Math.pow(r, 4) * 40); //new curve for enchanted equipment, allows for op items but mostly rolls garbage
 			EnchantmentHelper.addRandomEnchantment(this.rand, this.getHeldItem(), level);
@@ -212,7 +239,7 @@ public class EntitySkeleton extends EntityMob implements IRangedAttackMob {
 			double r = this.rand.nextDouble();
 			int level = (int)(5 + Math.pow(r, 4) * 40); //new curve for enchanted equipment, allows for op items but mostly rolls garbage
 			ItemStack var2 = this.getCurrentArmor(var1);
-			if(var2 != null && this.rand.nextFloat() < 0.2F) {
+			if(var2 != null && this.rand.nextFloat() < (this.isMiniBoss() ? 0.75F : 0.2F)) {
 				EnchantmentHelper.addRandomEnchantment(this.rand, var2, level);
 			}
 		}
@@ -229,6 +256,9 @@ public class EntitySkeleton extends EntityMob implements IRangedAttackMob {
 			this.setSkeletonType(1);
 			this.setCurrentItemOrArmor(0, new ItemStack(Item.swordStone));
 		} else {
+			if (this.rand.nextFloat() < 0.01F && !this.isSpawnedFromSpawner()) {
+				this.setMiniBoss(true);
+			}
 			this.tasks.addTask(4, this.aiArrowAttack);
 			this.addRandomArmor();
 			this.func_82162_bC();
@@ -242,7 +272,6 @@ public class EntitySkeleton extends EntityMob implements IRangedAttackMob {
 				this.equipmentDropChances[4] = 0.0F;
 			}
 		}
-
 	}
 
 	public void setCombatTask() {
@@ -273,6 +302,10 @@ public class EntitySkeleton extends EntityMob implements IRangedAttackMob {
 		if(EnchantmentHelper.getEnchantmentLevel(Enchantment.flame.effectId, this.getHeldItem()) > 0 || this.getSkeletonType() == 1) {
 			var3.setFire(100);
 		}
+		
+		if(this.isMiniBoss()) {
+			var3.setDamage(var3.getDamage() * 1.5D);
+		}
 
 		this.playSound("random.bow", 1.0F, 1.0F / (this.getRNG().nextFloat() * 0.4F + 0.8F));
 		this.worldObj.spawnEntityInWorld(var3);
@@ -299,6 +332,9 @@ public class EntitySkeleton extends EntityMob implements IRangedAttackMob {
 			byte var2 = var1.getByte("SkeletonType");
 			this.setSkeletonType(var2);
 		}
+		if(var1.getBoolean("IsMiniBoss")) {
+			this.setMiniBoss(true);
+		}
 
 		this.setCombatTask();
 	}
@@ -306,6 +342,10 @@ public class EntitySkeleton extends EntityMob implements IRangedAttackMob {
 	public void writeEntityToNBT(NBTTagCompound var1) {
 		super.writeEntityToNBT(var1);
 		var1.setByte("SkeletonType", (byte)this.getSkeletonType());
+		
+		if(this.isMiniBoss()) {
+			var1.setBoolean("IsMiniBoss", true);
+		}
 	}
 
 	public void setCurrentItemOrArmor(int var1, ItemStack var2) {
@@ -313,6 +353,20 @@ public class EntitySkeleton extends EntityMob implements IRangedAttackMob {
 		if(!this.worldObj.isRemote && var1 == 0) {
 			this.setCombatTask();
 		}
+	}
+	
+	public void setSpawnedFromSpawner(boolean flag) {
+		this.spawnedFromSpawner = flag;
+	}
 
+	public boolean isSpawnedFromSpawner() {
+		return this.spawnedFromSpawner;
+	}
+	
+	protected float getSoundPitch() {
+		if (this.isMiniBoss()) {
+			return 0.8F;
+		}
+		return super.getSoundPitch();
 	}
 }

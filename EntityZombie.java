@@ -4,6 +4,7 @@ import java.util.Calendar;
 
 public class EntityZombie extends EntityMob {
 	private int conversionTime = 0;
+	private boolean spawnedFromSpawner = false;
 
 	public EntityZombie(World var1) {
 		super(var1);
@@ -29,7 +30,11 @@ public class EntityZombie extends EntityMob {
 	}
 
 	public float getSpeedModifier() {
-		return super.getSpeedModifier() * (this.isChild() ? 1.5F : 1.0F);
+		return super.getSpeedModifier() * (this.isChild() ? 1.5F : 1.0F) * (this.isMiniBoss() ? 1.5F : 1.0F);
+	}
+	
+	protected int getExperiencePoints(EntityPlayer var1) {
+		return this.isMiniBoss() ? 50 : this.experienceValue;
 	}
 
 	protected void entityInit() {
@@ -37,6 +42,7 @@ public class EntityZombie extends EntityMob {
 		this.getDataWatcher().addObject(12, Byte.valueOf((byte)0));
 		this.getDataWatcher().addObject(13, Byte.valueOf((byte)0));
 		this.getDataWatcher().addObject(14, Byte.valueOf((byte)0));
+		this.getDataWatcher().addObject(15, Byte.valueOf((byte)0)); //miniboss
 	}
 
 	public String getTexture() {
@@ -59,6 +65,14 @@ public class EntityZombie extends EntityMob {
 	protected boolean isAIEnabled() {
 		return true;
 	}
+	
+	public boolean isMiniBoss() {
+		return this.getDataWatcher().getWatchableObjectByte(15) == 1;
+	}
+	
+	public void setMiniBoss(boolean var1) {
+		this.getDataWatcher().updateObject(15, Byte.valueOf((byte)1));
+	}
 
 	public boolean isChild() {
 		return this.getDataWatcher().getWatchableObjectByte(12) == 1;
@@ -77,7 +91,7 @@ public class EntityZombie extends EntityMob {
 	}
 
 	public void onLivingUpdate() {
-		if(this.worldObj.isDaytime() && !this.worldObj.isRemote && !this.isChild()) {
+		if(this.worldObj.isDaytime() && !this.worldObj.isRemote && !this.isChild() && !this.isMiniBoss()) {
 			float var1 = this.getBrightness(1.0F);
 			if(var1 > 0.5F && this.rand.nextFloat() * 30.0F < (var1 - 0.4F) * 2.0F && this.worldObj.canBlockSeeTheSky(MathHelper.floor_double(this.posX), MathHelper.floor_double(this.posY), MathHelper.floor_double(this.posZ))) {
 				boolean var2 = true;
@@ -98,6 +112,16 @@ public class EntityZombie extends EntityMob {
 					this.setFire(8);
 				}
 			}
+		}
+		
+		if (this.worldObj.isRemote && this.isMiniBoss()) {
+			this.worldObj.spawnParticle(
+				"flame",
+				this.posX + (this.rand.nextDouble() - 0.5D) * (double)this.width,
+				this.posY + this.rand.nextDouble() * (double)this.height,
+				this.posZ + (this.rand.nextDouble() - 0.5D) * (double)this.width,
+				0.0D, 0.02D, 0.0D
+			);
 		}
 
 		super.onLivingUpdate();
@@ -131,7 +155,9 @@ public class EntityZombie extends EntityMob {
 		if(var2 != null) {
 			var4 += var2.getDamageVsEntity(this);
 		}
-
+		if(this.isMiniBoss()) {
+			var4 *= 2; //double damage
+		}
 		return var4;
 	}
 
@@ -153,6 +179,14 @@ public class EntityZombie extends EntityMob {
 
 	protected int getDropItemId() {
 		return Item.rottenFlesh.itemID;
+	}
+	
+	protected void dropFewItems(boolean var1, int var2) {
+		super.dropFewItems(var1, var2);
+		if(this.isMiniBoss()) {
+			ItemStack item = Item.enchantedBook.func_92109_a(rand);
+			this.entityDropItem(item, 1);
+		}
 	}
 
 	public EnumCreatureAttribute getCreatureAttribute() {
@@ -182,21 +216,21 @@ public class EntityZombie extends EntityMob {
 	}
 
 	protected void addRandomArmor() {
-		if(this.rand.nextFloat() < 0.07F) {
+		if(this.rand.nextFloat() < (this.isMiniBoss() ? 0.95F : 0.05F)) {
 			int var1 = this.rand.nextInt(2);
 			float var2 = 0.1F;
-			if(this.rand.nextFloat() < 0.095F) {
+			if(this.rand.nextFloat() < (this.isMiniBoss() ? 0.25F : 0.095F)) {
 				++var1;
 			}
 
-			if(this.rand.nextFloat() < 0.095F) {
+			if(this.rand.nextFloat() < (this.isMiniBoss() ? 0.25F : 0.095F)) {
 				++var1;
 			}
 
-			if(this.rand.nextFloat() < 0.095F) {
+			if(this.rand.nextFloat() <(this.isMiniBoss() ? 0.25F : 0.095F)) {
 				++var1;
 			}
-
+			
 			for(int var3 = 3; var3 >= 0; --var3) {
 				ItemStack var4 = this.getCurrentArmor(var3);
 				if(var3 < 3 && this.rand.nextFloat() < var2) {
@@ -211,7 +245,7 @@ public class EntityZombie extends EntityMob {
 				}
 			}
 		}
-		if(this.rand.nextFloat() < 0.05F) {
+		if(this.rand.nextFloat() < (this.isMiniBoss() ? 0.5F : 0.05F)) {
 			int var1 = this.rand.nextInt(3);
 			if(var1 == 0) {
 				this.setCurrentItemOrArmor(0, new ItemStack(Item.swordIron));
@@ -223,7 +257,7 @@ public class EntityZombie extends EntityMob {
 	}
 	
 	protected void func_82162_bC() {
-		if(this.getHeldItem() != null && this.rand.nextFloat() < 0.2F) {
+		if(this.getHeldItem() != null && this.rand.nextFloat() < (this.isMiniBoss() ? 0.75F : 0.2F)) {
 			double r = this.rand.nextDouble();
 			int level = (int)(5 + Math.pow(r, 4) * 40); //new curve for enchanted equipment, allows for op items but mostly rolls garbage
 			EnchantmentHelper.addRandomEnchantment(this.rand, this.getHeldItem(), level);
@@ -232,7 +266,7 @@ public class EntityZombie extends EntityMob {
 			double r = this.rand.nextDouble();
 			int level = (int)(5 + Math.pow(r, 4) * 40); //new curve for enchanted equipment, allows for op items but mostly rolls garbage
 			ItemStack var2 = this.getCurrentArmor(var1);
-			if(var2 != null && this.rand.nextFloat() < 0.2F) {
+			if(var2 != null && this.rand.nextFloat() < (this.isMiniBoss() ? 0.75F : 0.2F)) {
 				EnchantmentHelper.addRandomEnchantment(this.rand, var2, level);
 			}
 		}
@@ -248,6 +282,10 @@ public class EntityZombie extends EntityMob {
 		if(this.isVillager()) {
 			var1.setBoolean("IsVillager", true);
 		}
+		
+		if(this.isMiniBoss()) {
+			var1.setBoolean("IsMiniBoss", true);
+		}
 
 		var1.setInteger("ConversionTime", this.isConverting() ? this.conversionTime : -1);
 	}
@@ -260,6 +298,10 @@ public class EntityZombie extends EntityMob {
 
 		if(var1.getBoolean("IsVillager")) {
 			this.setVillager(true);
+		}
+		
+		if(var1.getBoolean("IsMiniBoss")) {
+			this.setMiniBoss(true);
 		}
 
 		if(var1.hasKey("ConversionTime") && var1.getInteger("ConversionTime") > -1) {
@@ -295,7 +337,12 @@ public class EntityZombie extends EntityMob {
 		if(this.worldObj.rand.nextFloat() < 0.05F) {
 			this.setVillager(true);
 		}
-
+		if (this.rand.nextFloat() < 0.01F && !this.isSpawnedFromSpawner()) {
+			this.setMiniBoss(true);
+		}
+		if (this.rand.nextFloat() < 0.05F) {
+			this.setChild(true);
+		}
 		this.addRandomArmor();
 		this.func_82162_bC();
 		if(this.getCurrentItemOrArmor(4) == null) {
@@ -305,10 +352,6 @@ public class EntityZombie extends EntityMob {
 				this.equipmentDropChances[4] = 0.0F;
 			}
 		}
-		if (this.rand.nextFloat() < 0.05F) {
-			this.setChild(true);
-		}
-
 	}
 
 	public boolean interact(EntityPlayer var1) {
@@ -390,5 +433,20 @@ public class EntityZombie extends EntityMob {
 		}
 
 		return var1;
+	}
+	
+	public void setSpawnedFromSpawner(boolean flag) {
+		this.spawnedFromSpawner = flag;
+	}
+
+	public boolean isSpawnedFromSpawner() {
+		return this.spawnedFromSpawner;
+	}
+	
+	protected float getSoundPitch() {
+		if (this.isMiniBoss()) {
+			return 0.8F;
+		}
+		return super.getSoundPitch();
 	}
 }
