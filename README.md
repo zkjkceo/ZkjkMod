@@ -66,5 +66,5 @@ Planned features:
  
 TO DO:
 * Golderfish loot and spawning mechanic
-* Miniboss zombies drop enchanted books (this is too op and has to be removed)
+* Minibosses should have double health
 * Alerts on chat
