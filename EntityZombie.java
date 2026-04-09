@@ -180,14 +180,6 @@ public class EntityZombie extends EntityMob {
 	protected int getDropItemId() {
 		return Item.rottenFlesh.itemID;
 	}
-	
-	protected void dropFewItems(boolean var1, int var2) {
-		super.dropFewItems(var1, var2);
-		if(this.isMiniBoss()) {
-			ItemStack item = Item.enchantedBook.func_92109_a(rand);
-			this.entityDropItem(item, 1);
-		}
-	}
 
 	public EnumCreatureAttribute getCreatureAttribute() {
 		return EnumCreatureAttribute.UNDEAD;
