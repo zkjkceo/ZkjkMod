@@ -64,6 +64,7 @@ Planned features:
 * Gold Golem
 * Diamond Golem
 * White Enderman
+* Fish Variants
  
 TO DO:
 * Golderfish loot and spawning mechanic
