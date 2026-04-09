@@ -63,6 +63,7 @@ Planned features:
   - Will spawn rarely from mined ores (the ones that you can mine with fortune). it will be very fast and endurable and will try to escape from the player, once it's killed it drops more materials.
 * Gold Golem
 * Diamond Golem
+* White Enderman
  
 TO DO:
 * Golderfish loot and spawning mechanic
