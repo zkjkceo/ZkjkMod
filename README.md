@@ -38,6 +38,7 @@ Current features include:
   - there are still a few issues regarding that. splash potion doesn't work. i also want to make it so that it will take the actual player's skin (there's no skin support so i skipped it for now)
 * Old fire spreading
   - Fire spreads as fast as it did in Alpha and early Beta. Fire spreads slower in humid biomes (jungle and jungle hills) to prevent EXTREME lag
+* Bigger Beacon range (100x100 instead of 50x50)
 
 Unobtainable stuff (for now):
 * Flowers: Poppy, Carnation, Paeonia, Black Rose
