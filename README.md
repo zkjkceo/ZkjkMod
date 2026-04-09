@@ -64,4 +64,4 @@ Planned features:
  
 TO DO:
 * Golderfish loot and spawning mechanic
-
+* Alerts on chat
