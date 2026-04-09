@@ -83,6 +83,7 @@ public class RenderManager {
 		this.entityRenderMap.put(EntityFishHook.class, new RenderFish());
 		this.entityRenderMap.put(EntityLightningBolt.class, new RenderLightningBolt());
 		this.entityRenderMap.put(EntitySkeletonLord.class, new RenderSkeletonLord());
+		this.entityRenderMap.put(EntityGolderfish.class, new RenderGolderfish());
 		Iterator var1 = this.entityRenderMap.values().iterator();
 
 		while(var1.hasNext()) {

@@ -170,5 +170,6 @@ public class EntityList {
 		addMapping(EntityBoatLarge.class, "BoatLarge", 122);
 		addMapping(EntityEnderCrystal.class, "EnderCrystal", 200);
 		addMapping(EntitySkeletonLord.class, "SkeletonLord", 123, 12698049, 4802889);
+		addMapping(EntityGolderfish.class, "Golderfish", 124, 14278656, 7235584);
 	}
 }
