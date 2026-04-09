@@ -57,6 +57,9 @@ Planned features:
 * Runes. Unique enchantment, one per item
 * New bosses
   - Skeleton Lord. made from bone blocks and regular skeleton heads (like the wither)
+* Gardener Villager (selling different flowers)
+* Goldenfish (golden silverfish)
+  - Will spawn rarely from mined ores (the ones that you can mine with fortune). it will be very fast and endurable and will try to escape from the player, once it's killed it drops more materials.
  
 TO DO:
-* Add minibosses
+
