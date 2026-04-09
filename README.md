@@ -59,5 +59,4 @@ Planned features:
   - Skeleton Lord. made from bone blocks and regular skeleton heads (like the wither)
  
 TO DO:
-* Add other trees in RoofedForest
 * Add minibosses
