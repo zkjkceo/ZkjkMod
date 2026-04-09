@@ -10,8 +10,8 @@ Current features include:
   - Thunder toggle (basically just kills lightning bolts and stops them from being rendered)
   - Far Entities settings (so you can see entities from bigger distance)
 * Biomes and Worldgen:
-  - Flower Forests (more birch and some new flowers spawn)
-  - Deep Oceans (issue: rivers might not run into oceans. i had to fix rivers making outlines around deep oceans)
+  - Flower Forests (more birch and some new flowers generate)
+  - Deep Oceans (issue: rivers might not run into oceans. i had to fix rivers making outlines around deep oceans. more caves generate under deep oceans)
   - Dark Forest (added some cobweb, more spiders spawn in this biome and passive mobs don't spawn)
 * New Flowers
   - Backported from 1.7
@@ -49,8 +49,6 @@ Planned features:
 * More stuff in F3
 * More potions
   - Potion of Fire
-* Colored glass
-  - maybe, because i'm not sure if it fits, but it would be nice
 * Player spawn point compass
 * Boats for 2 players
 * Biome changes and new biomes
