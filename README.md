@@ -29,6 +29,7 @@ Current features include:
 * Enchanted Books from loot with multiple enchants (1/4 chance for every next enchant)
 * Stronger Zombies and Skeletons
   - they now have the same chance for armor and enchanted equipment on all difficulty levels. their enchanted items use a curve now to determine their enchantment level - so now they can have op enchanted items, but it's more common they get bad enchants. to reward it there is a 1/1000 chance they will drop a random enchanted book.
+  - new mob variant for zombies, skeletons and spiders - they can now spawn as minibosses and are way stronger
   - baby zombies can now spawn naturally like in 1.6.2
 * Beetroot can now be obtained from zombies. the chance is 1/250
 * Potion of Cloning
