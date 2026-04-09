@@ -10,13 +10,14 @@ public class BiomeGenRoofedForest extends BiomeGenBase {
 		this.theBiomeDecorator.grassPerChunk = 10;
 		this.theBiomeDecorator.mushroomsPerChunk = 10;
 		this.theBiomeDecorator.bigMushroomsPerChunk = 4;
-		this.theBiomeDecorator.cobwebPerChunk = 20;
+		this.theBiomeDecorator.cobwebPerChunk = 10;
 		
 		this.spawnableMonsterList.add(new SpawnListEntry(EntitySpider.class, 100, 6, 12));
 		this.spawnableCreatureList.clear();
 	}
+	
 	public WorldGenerator getRandomWorldGenForTrees(Random var1) {
-		return (WorldGenerator)(new WorldGenHugeTrees2(false));
+		return (WorldGenerator)(var1.nextInt(3) == 0 ? this.worldGeneratorTrees : (var1.nextInt(3) == 0 ? this.worldGeneratorForest : (new WorldGenHugeTrees2(false))));
 	}
 	
 	public int getBiomeGrassColor() {
