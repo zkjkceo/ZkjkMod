@@ -32,6 +32,8 @@ Current features include:
   - new mob variant for zombies, skeletons and spiders - they can now spawn as minibosses and are way stronger (1/100)
   - baby zombies can now spawn naturally like in 1.6.2
 * Beetroot can now be obtained from zombies. the chance is 1/250
+* Orebugs
+  - 1/500 to spawn from 'fortune'-type ores. it moves really quickly, has a lot of hp, but it doesn't attack the player, it just flees. hitting it drops some materials and killing it drops even more. you only have 100 seconds to kill it.
 * Potion of Cloning
   - you can make it from magical beetroot (combine lapis lazuli with beetroot)
   - it will spawn a clone for 90/180 seconds that will fight for you
@@ -58,7 +60,6 @@ Planned features:
   - Skeleton Lord. made from bone blocks and regular skeleton heads (like the wither)
 * Gardener Villager (selling different flowers)
 * DoublePlants
-* Goldenfish (golden silverfish)
   - Will spawn rarely from mined ores (the ones that you can mine with fortune). it will be very fast and endurable and will try to escape from the player, once it's killed it drops more materials.
 * Gold Golem
 * Diamond Golem
