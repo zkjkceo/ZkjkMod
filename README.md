@@ -65,6 +65,7 @@ Planned features:
 * White Enderman
 * Fish Variants
 * New SKY dimension
+* More elaborate music system (with config and everything)
  
 TO DO:
 * Golderfish loot and spawning mechanic
