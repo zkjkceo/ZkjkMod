@@ -69,5 +69,4 @@ Planned features:
  
 TO DO:
 * Golderfish loot and spawning mechanic
-* Minibosses should have double health
 * Alerts on chat
