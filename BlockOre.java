@@ -33,6 +33,7 @@ public class BlockOre extends Block {
 		super.dropBlockAsItemWithChance(var1, var2, var3, var4, var5, var6, var7);
 		if(this.idDropped(var5, var1.rand, var7) != this.blockID) {
 			int var8 = 0;
+			int chanceForGolderfish = Integer.MAX_VALUE;
 			if(this.blockID == Block.oreCoal.blockID) {
 				var8 = MathHelper.getRandomIntegerInRange(var1.rand, 0, 2);
 			} else if(this.blockID == Block.oreDiamond.blockID) {
@@ -47,7 +48,16 @@ public class BlockOre extends Block {
 
 			this.dropXpOnBlockBreak(var1, var2, var3, var4, var8);
 			
-			if(var1.rand.nextInt(500) == 0) {
+			if(this.blockID == Block.oreCoal.blockID) {
+				chanceForGolderfish = 2000;
+			} else if(this.blockID == Block.oreDiamond.blockID) {
+				chanceForGolderfish = 200;
+			} else if(this.blockID == Block.oreEmerald.blockID) {
+				chanceForGolderfish = 100;
+			} else if(this.blockID == Block.oreLapis.blockID) {
+				chanceForGolderfish = 500;
+			}
+			if(var1.rand.nextInt(chanceForGolderfish) == 0 && this.blockID != Block.oreNetherQuartz.blockID) {
 				EntityGolderfish golderfish = new EntityGolderfish(var1);
    				golderfish.setLocationAndAngles((double)var2 + 0.5D, (double)var3, (double)var4 + 0.5D, 0.0F, 0.0F);
 				var1.spawnEntityInWorld(golderfish);
