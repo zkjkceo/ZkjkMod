@@ -53,9 +53,10 @@ Planned features:
   - Potion of Fire
 * Player spawn point compass
 * Boats for 2 players
+* Runes. Unique enchantment, one per item
+
 * Biome changes and new biomes
   - Snowless Taiga + Hills of this biome
-* Runes. Unique enchantment, one per item
 * New bosses
   - Skeleton Lord. made from bone blocks and regular skeleton heads (like the wither)
 * Gardener Villager (selling different flowers)
@@ -70,3 +71,6 @@ Planned features:
  
 TO DO:
 * Alerts on chat
+* Fish variants
+* Gardener Villager
+* Snowless taiga
