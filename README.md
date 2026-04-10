@@ -64,6 +64,7 @@ Planned features:
 * Diamond Golem
 * White Enderman
 * Fish Variants
+* New SKY dimension
  
 TO DO:
 * Golderfish loot and spawning mechanic
