@@ -41,7 +41,11 @@ public class EntitySpider extends EntityMob {
 	}
 
 	public int getMaxHealth() {
-		return 16;
+		if(this.isMiniBoss()) {
+			return 40;
+		} else {
+			return 16;
+		}
 	}
 
 	public double getMountedYOffset() {
@@ -164,6 +168,7 @@ public class EntitySpider extends EntityMob {
 		if(this.worldObj.rand.nextFloat() < 0.01F && !this.isSpawnedFromSpawner()) {
 			this.setMiniBoss(true);
 		}
+		this.health = this.getMaxHealth();
 	}
 	
 	public void writeEntityToNBT(NBTTagCompound var1) {

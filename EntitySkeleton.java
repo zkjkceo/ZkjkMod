@@ -51,7 +51,11 @@ public class EntitySkeleton extends EntityMob implements IRangedAttackMob {
 	}
 
 	public int getMaxHealth() {
-		return 20;
+		if(this.isMiniBoss()) {
+			return 40;
+		} else {
+			return 20;
+		}
 	}
 
 	protected String getLivingSound() {
@@ -272,6 +276,7 @@ public class EntitySkeleton extends EntityMob implements IRangedAttackMob {
 				this.equipmentDropChances[4] = 0.0F;
 			}
 		}
+		this.health = this.getMaxHealth();
 	}
 
 	public void setCombatTask() {

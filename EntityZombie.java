@@ -50,7 +50,11 @@ public class EntityZombie extends EntityMob {
 	}
 
 	public int getMaxHealth() {
-		return 20;
+		if(this.isMiniBoss()) {
+			return 40;
+		} else {
+			return 20;
+		}
 	}
 
 	public int getTotalArmorValue() {
@@ -344,6 +348,7 @@ public class EntityZombie extends EntityMob {
 				this.equipmentDropChances[4] = 0.0F;
 			}
 		}
+		this.health = this.getMaxHealth();
 	}
 
 	public boolean interact(EntityPlayer var1) {
