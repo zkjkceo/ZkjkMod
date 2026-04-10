@@ -68,5 +68,4 @@ Planned features:
 * More elaborate music system (with config and everything)
  
 TO DO:
-* Golderfish loot and spawning mechanic
 * Alerts on chat
