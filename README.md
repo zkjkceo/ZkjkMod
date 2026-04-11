@@ -74,5 +74,4 @@ Planned features:
  
 TO DO:
 * Alerts on chat
-* Ocelots don't eat raw salmon for now...
 * Gardener Villager
