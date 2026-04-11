@@ -57,6 +57,8 @@ Planned features:
   - Potion of Fire (as splash starts fire around it)
 * Runes. Unique enchantment, one per item
 
+* Old Mushroom spreading
+* New mushrooms
 * Big spruce (backport from 1.7)
 * New bosses
   - Skeleton Lord.
