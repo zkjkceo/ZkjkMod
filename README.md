@@ -18,7 +18,7 @@ Current features include:
 * Fishing Changes:
   - You can obtain enchanted books and xp bottles from fishing now (1/100)
   - Added garbage items to get from fishing (1/10)
-  - You can get salmon (1/3) (issue: you cannot feed it to ocelots yet)
+  - You can get salmon (1/3) (issue: you cannot feed it to ocelots yet, also it uses another ID to the vanilla salmon added later (as damage value to regular fish) so it won't be compatible if you ever update your world)
 * Coal Block
 * Wheat Block
 * Bone Block
