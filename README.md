@@ -15,6 +15,10 @@ Current features include:
   - Dark Forest (added some cobweb, more spiders spawn in this biome and passive mobs don't spawn)
 * New Flowers
   - Backported from 1.7
+* Fishing Changes:
+  - You can obtain enchanted books and xp bottles from fishing now (1/100)
+  - Added garbage items to get from fishing (1/10)
+  - You can get salmon (1/3)
 * Coal Block
 * Wheat Block
 * Bone Block
@@ -71,6 +75,6 @@ Planned features:
  
 TO DO:
 * Alerts on chat
-* Fish variants
+* Ocelots don't eat raw salmon for now...
 * Gardener Villager
 * Snowless taiga
