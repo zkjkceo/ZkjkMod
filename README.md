@@ -7,7 +7,7 @@ Current features include:
   - Weather Forecast /forecast
 * Config:
   - Log Rotation settings
-  - Thunder toggle (basically just kills lightning bolts and stops them from being rendered)
+  - Thunder toggle (basically just kills lightning bolts and stops them from being rendered. update: i noticed recently fire can still apear, i will work on it sometime.)
   - Far Entities settings (so you can see entities from bigger distance)
 * Biomes and Worldgen:
   - Flower Forests (more birch and new flowers generate)
@@ -61,7 +61,7 @@ Planned features:
 * New bosses
   - Skeleton Lord.
 * Gardener Villager (selling different flowers)
-* Musician Villager (selling jukebox, noteblocks and music discs)
+* Musician Villager (selling jukebox, noteblocks and music discs, maybe instruments?)
 * Instruments?
 * DoublePlants (backport from 1.7)
 * Gold Golem
