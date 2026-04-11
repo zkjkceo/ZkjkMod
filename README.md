@@ -14,7 +14,7 @@ Current features include:
   - Deep Oceans (issue: rivers might not run into oceans. i had to fix rivers making outlines around deep oceans. more caves generate under deep oceans)
   - Dark Forest (added some cobweb, more spiders spawn in this biome and passive mobs don't spawn)
 * New Flowers
-  - Backported from 1.7 + Small Paeonia, Black Roses, Yellow Tulips and Carnation
+  - Backported from 1.7 + Small Paeonia, Black Roses, Yellow Tulips and Carnation (issue: i fixed rose rendering in the flower pot, however you can't put any of the new flowers in it yet. i can only do a few with the limitation of that block, or change it completely how it works (like 1.7 did))
 * Fishing Changes:
   - You can obtain enchanted books and xp bottles from fishing now (1/100)
   - Added garbage items to get from fishing (1/10)
