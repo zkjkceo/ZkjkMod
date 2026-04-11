@@ -635,6 +635,8 @@ item.clock.name=Clock
 item.yellowDust.name=Glowstone Dust
 item.fishRaw.name=Raw Fish
 item.fishCooked.name=Cooked Fish
+item.salmonRaw.name=Raw Salmon
+item.salmonCooked.name=Cooked Salmon
 item.record.name=Music Disc
 item.bone.name=Bone
 item.dyePowder.black.name=Ink Sac
@@ -785,6 +787,7 @@ entity.EnderDragon.name=Ender Dragon
 entity.WitherBoss.name=Wither
 entity.Witch.name=Witch
 entity.SkeletonLord.name=Skeleton Lord
+entity.Golderfish.name=Orebug
 
 entity.Pig.name=Pig
 entity.Sheep.name=Sheep
